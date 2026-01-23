@@ -11,8 +11,6 @@ let state = {
   quizMode: false,
 };
 
-console.log(questionsData);
-
 // Get filtered questions
 function getFilteredQuestions() {
   let filtered = [...questionsData];
@@ -328,22 +326,41 @@ function collapseAll() {
   showToast("All questions collapsed", "success");
 }
 
+// Toggle expand
 const toggleBtn = document.getElementById("toggleExpand");
+const icon = document.getElementById("expandIcon");
+
+function updateExpandIcon() {
+  if (!icon) return;
+
+  icon.className =
+    state.expandedQuestions.size > 0
+      ? "fas fa-compress-alt"
+      : "fas fa-expand-alt";
+}
 
 toggleBtn.addEventListener("click", () => {
-  const icon = toggleBtn.querySelector("i");
-
-  // check if anything is expanded
-  const isExpanded = state.expandedQuestions.size > 0;
-
-  if (isExpanded) {
+  if (state.expandedQuestions.size > 0) {
     collapseAll();
-    icon.className = "fas fa-expand-alt";
   } else {
     expandAll();
-    icon.className = "fas fa-compress-alt";
   }
+
+  updateExpandIcon();
 });
+
+// initial sync
+updateExpandIcon();
+
+function updateExpandIcon() {
+  const icon = document.querySelector("#toggleExpand i");
+  if (!icon) return;
+
+  icon.outerHTML =
+    state.expandedQuestions.size > 0
+      ? '<i class="fas fa-compress-alt"></i>'
+      : '<i class="fas fa-expand-alt"></i>';
+}
 
 
 // Clear all progress

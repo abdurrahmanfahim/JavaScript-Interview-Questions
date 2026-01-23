@@ -776,27 +776,23 @@ body::before {
   justify-content: center;
 
   font-size: 1.2rem;
-
-  /* hidden by default */
-  /* visibility: hidden;
-  opacity: 0;
-  transform: translateY(20px) scale(0.95); */
 }
 
 
 /* Resume Reading Banner */
 .resume-banner {
-  background: var(--accent-gradient);
+  /* background: var(--accent-gradient);
   color: white;
   padding: 16px 20px;
   border-radius: var(--radius-lg);
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
+  margin-bottom: 20px; */
+  /* display: flex; */
+  /* align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 15px;
-  animation: slideDown 0.5s ease;
+  animation: slideDown 0.5s ease; */
+  display: none;
 }
 
 @keyframes slideDown {
@@ -815,11 +811,13 @@ body::before {
   align-items: center;
   gap: 10px;
   font-weight: 500;
+  display: none;
 }
 
 .resume-banner .btn {
   background: white;
   color: var(--accent-primary);
+  display: none;
 }
 
 .resume-banner .btn:hover {
@@ -1537,6 +1535,14 @@ body::before {
     right: 15px;
   }
 
+  .expand-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+    bottom: 75px;
+    right: 15px;
+  }
+
   .toast-container {
     bottom: 15px;
     left: 15px;
@@ -1569,6 +1575,10 @@ body::before {
   .modal-footer {
     padding: 15px 20px;
   }
+
+   .resume-banner {
+    display: none;
+  }
 }
 
 /* Print Styles */
@@ -1596,4 +1606,8 @@ body::before {
   .question-body {
     filter: none !important;
   }
+}
+
+.bookmarked {
+  display: none;
 }
