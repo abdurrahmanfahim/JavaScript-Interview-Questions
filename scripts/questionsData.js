@@ -47,7 +47,7 @@ const questionsData = [
     id: 3,
     title: "What is the temporal dead zone?",
     content: `
-      <p>Temporal Dead Zone (TDZ) হলো scope শুরু হওয়ার মুহূর্ত থেকে <code>let</code> বা <code>const</code> variable-এর initialization পর্যন্ত সময়কাল, যেখানে variableটি memory-তে থাকলেও access করলে ReferenceError হয়।</p>
+      <p>Temporal Dead Zone (TDZ) হলো block scope এর ওই সময়, যখন <code>let</code> বা <code>const</code> দিয়ে declare করা variable কে access করা যায় না। Declare করার আগে access করলে ReferenceError হয়।</p>
       <i>TDZ মানে “exist করে কিন্তু ব্যবহার করা নিষিদ্ধ” অবস্থা।</i>
       <ol>
         <li>TDZ শুরু হয় variable এর block এ enter করা থেকে, আর শেষ হয় declaration/initialization হওয়ার পর।</li>
