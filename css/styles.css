@@ -755,6 +755,35 @@ body::before {
   transform: translateY(-3px);
 }
 
+/* Expand button */
+.expand-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent-gradient);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.3s ease;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+
+  /* hidden by default */
+  /* visibility: hidden;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95); */
+}
+
+
 /* Resume Reading Banner */
 .resume-banner {
   background: var(--accent-gradient);

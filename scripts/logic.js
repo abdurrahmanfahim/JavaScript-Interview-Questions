@@ -328,6 +328,24 @@ function collapseAll() {
   showToast("All questions collapsed", "success");
 }
 
+const toggleBtn = document.getElementById("toggleExpand");
+
+toggleBtn.addEventListener("click", () => {
+  const icon = toggleBtn.querySelector("i");
+
+  // check if anything is expanded
+  const isExpanded = state.expandedQuestions.size > 0;
+
+  if (isExpanded) {
+    collapseAll();
+    icon.className = "fas fa-expand-alt";
+  } else {
+    expandAll();
+    icon.className = "fas fa-compress-alt";
+  }
+});
+
+
 // Clear all progress
 function clearAllProgress() {
   if (
