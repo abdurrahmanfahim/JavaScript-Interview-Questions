@@ -1579,6 +1579,10 @@ body::before {
    .resume-banner {
     display: none;
   }
+
+  #bm {
+    display: none;
+  }
 }
 
 /* Print Styles */
