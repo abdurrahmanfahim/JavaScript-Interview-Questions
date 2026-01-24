@@ -1607,7 +1607,3 @@ body::before {
     filter: none !important;
   }
 }
-
-.bookmarked {
-  display: none;
-}
