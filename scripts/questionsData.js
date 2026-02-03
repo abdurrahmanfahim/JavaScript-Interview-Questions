@@ -803,14 +803,14 @@ counter(); // 3</code></pre>
         </thead>
         <tbody>
           <tr>
-            <td>Execution</td>
-            <td>Sequential</td>
-            <td>Parallel / background</td>
+            <td style='text-align: center; padding-right: 10px;' >Execution</td>
+            <td style='text-align: center; padding-right: 10px;' >Sequential</td>
+            <td style='text-align: center; padding-right: 10px;' >Parallel / background</td>
           </tr>
           <tr>
-            <td>Blocking</td>
-            <td>Yes</td>
-            <td>No</td>
+            <td style='padding-right: 10px;' >Blocking</td>
+            <td style='text-align: center; padding-right: 10px;' >Yes</td>
+            <td style='text-align: center; padding-right: 10px;' >No</td>
           </tr>
           <tr>
             <td>Result</td>
