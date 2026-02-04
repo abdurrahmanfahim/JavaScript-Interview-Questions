@@ -500,6 +500,19 @@ function toggleTheme() {
   }
 }
 
+// Expand/Collapse state tracker
+let isExpanded = false;
+
+function toggleExpandCollapse() {
+  if (isExpanded) {
+    collapseAll();
+    isExpanded = false;
+  } else {
+    expandAll();
+    isExpanded = true;
+  }
+}
+
 // Toggle mobile menu
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById("mobileMenu");
@@ -567,12 +580,8 @@ function openModal(type) {
             <div class="shortcut-keys"><span class="key">T</span></div>
           </div>
           <div class="shortcut-item">
-            <span>Expand All</span>
+            <span>Toggle Expand All / Collapse All</span>
             <div class="shortcut-keys"><span class="key">E</span></div>
-          </div>
-          <div class="shortcut-item">
-            <span>Collapse All</span>
-            <div class="shortcut-keys"><span class="key">C</span></div>
           </div>
           <div class="shortcut-item">
             <span>Quiz Mode</span>
@@ -671,43 +680,43 @@ document.addEventListener("keydown", (e) => {
     return;
   }
 
-  switch (e.key) {
-    case "/":
-      if (e.ctrlKey) {
-        e.preventDefault();
-        document.getElementById("searchInput").focus();
-      }
-      break;
-    case "ArrowLeft":
-      changePage(state.currentPage - 1);
-      break;
-    case "ArrowRight":
-      changePage(state.currentPage + 1);
-      break;
-    case "r":
-    case "R":
-      randomQuestion();
-      break;
-    case "t":
-    case "T":
-      toggleTheme();
-      break;
-    case "e":
-    case "E":
-      expandAll();
-      break;
-    case "c":
-    case "C":
-      collapseAll();
-      break;
-    case "q":
-    case "Q":
-      toggleQuizMode();
-      break;
-    case "Escape":
-      closeModal();
-      break;
-  }
+// Updated keyboard handler
+switch (e.key) {
+  case "/":
+    if (e.ctrlKey) {
+      e.preventDefault();
+      document.getElementById("searchInput").focus();
+    }
+    break;
+  case "ArrowLeft":
+    changePage(state.currentPage - 1);
+    break;
+  case "ArrowRight":
+    changePage(state.currentPage + 1);
+    break;
+  case "r":
+  case "R":
+    randomQuestion();
+    break;
+  case "t":
+  case "T":
+    toggleTheme();
+    break;
+  case "e":
+  case "E":
+    if (e.ctrlKey) {
+      e.preventDefault();
+      toggleExpandCollapse();
+    }
+    break;
+  case "q":
+  case "Q":
+    toggleQuizMode();
+    break;
+  case "Escape":
+    closeModal();
+    break;
+}
 });
 
 // Initialize
