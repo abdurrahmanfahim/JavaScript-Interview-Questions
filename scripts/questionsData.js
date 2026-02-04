@@ -447,7 +447,7 @@ counter(); // 3</code></pre>
         <li><strong>async/await</strong></li>
         <li><strong>Modular Functions</strong></li>
       </ol>
-      <hr>
+      
       <p><strong>Callback Hell</strong> = deeply nested callbacks এর জন্য code যখন messy, unreadable, maintain করা impossible হয়ে যায়। Solution হলো <strong>Promises</strong> and <strong>async/await</strong>।</p>
     `
 ,
@@ -484,13 +484,13 @@ counter(); // 3</code></pre>
         <li><strong>যদি সমস্ত promise সাফল্যপূর্ণভাবে resolve হয়</strong>, তাহলে একটি নতুন promise ফেরত দেয়—যার মধ্যে সমস্ত <strong>result</strong> একটি <strong>এরে</strong>এ থাকে।</li>
         <li><strong>যদি কোনোটা প্রমিস রিজেক্ট হয়</strong>, তাহলে Promise.all() তা <strong>তাৎক্ষণিকভাবে রিজেক্ট</strong> করে বের হয়।</li>
       </ul>
-      <hr>
+      
       <h3>Use Cases:</h3>
       <ol>
         <li><strong>একইসাথে একাধিক API call</strong> চলানো (পারফর্ম্যান্স বাড়ানো)</li>
         <li>বিভিন্ন সোর্স থেকে ডেটা লোড করার সময় <strong>প্যারালেল রান</strong> করা</li>
       </ol>
-      <hr>
+      
       <h3>Key Points:</h3>
       <ol>
         <li><strong>সমস্ত promise পারালালভাবে চলে</strong>।</li>
@@ -584,7 +584,7 @@ counter(); // 3</code></pre>
     content: `
       <p>Async JavaScript এর <strong>Event Loop Model</strong> হলো একটা mechanism, যা JavaScript কে single-threaded হয়েও asynchronous task handle করতে দেয়।</p>
       <p>JavaScript একটা single-threaded language—মানে এক সময় একটাই কাজ চলতে পারে। কিন্তু async কাজ (API call, timer, file read) যেন block না করে, তাই event loop model use হয়।</p>
-      <hr>
+      
       <h2>Event Loop Model Flow (Step-by-Step)</h2>
       <h3>1) Call Stack</h3>
       <ul>
@@ -633,7 +633,7 @@ counter(); // 3</code></pre>
         <li>crashes</li>
       </ul>
       <p>হতে পারত। তাই JavaScript কে মূলত single-threaded রাখা হয়েছে, যাতে একসময় একটাই action DOM এ apply হয়।</p>
-      <hr>
+      
       <h3>2) Event-driven architecture এর সাথে best fit</h3>
       <p>JavaScript এর async system চলে যেমন—</p>
       <ul>
@@ -642,11 +642,11 @@ counter(); // 3</code></pre>
         <li>Microtask queue</li>
       </ul>
       <p>এগুলো single-thread হলে বেশি predictably এবং efficiently manage করা যায়।</p>
-      <hr>
+      
       <h3>3) Safety &amp; security</h3>
       <p>Multi-threaded environment এ shared memory ঠিকভাবে manage না করলে security risk বাড়ে।</p>
       <p>Single-thread = কম risk (shared state কম, concurrency bug কম)।</p>
-      <hr>
+      
       <h2>JavaScript কি শুধু single-threaded?</h2>
       <p>Not exactly.</p>
       <p>Browser-এর ভিতরে (behind the scenes) অনেক কিছুই multiple threads use করে, যেমন—</p>
@@ -668,7 +668,7 @@ counter(); // 3</code></pre>
     content: `
       <p>Web Worker হলো JavaScript এর একটা background thread, যা main thread block না করে heavy computation / async task handle করে।</p>
       <p>Normally JavaScript single-threaded, তাই main thread এ heavy computation UI freeze করতে পারে। Web Worker use করলে UI responsive থাকে এবং code parallel এ run হয়।</p>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Web Worker background thread এ execute হয়</li>
@@ -676,14 +676,14 @@ counter(); // 3</code></pre>
         <li>DOM এ direct access নেই → <code>postMessage()</code> &amp; <code>onmessage</code> দিয়ে communication করতে হয়</li>
         <li>Mostly heavy calculations, data processing, large loops এর জন্য use হয়</li>
       </ol>
-      <hr>
+      
       <h3>Benefits</h3>
       <ul>
         <li>Main thread এর UI responsive থাকে</li>
         <li>Heavy computation parallel execution হয়</li>
         <li>UI freezing avoid করা যায়</li>
       </ul>
-      <hr>
+      
       <p><strong>Web Worker</strong> = JS এর background thread, main thread কে block না করে heavy tasks execute করে, UI smooth রাখতে help করে; DOM direct access করতে পারে না—message passing দিয়ে communicate করে।</p>
     `
 ,
@@ -696,21 +696,21 @@ counter(); // 3</code></pre>
     content: `
       <p>Async Iterator হলো JavaScript এর একটা special object, যা asynchronous data stream কে step-by-step iterate করতে দেয়।</p>
       <p>Normally iterators synchronous data iterate করে (<code>for...of</code>)। Async iterators asynchronous data (API streams, file reads, large datasets) iterate করতে <code>for await...of</code> loop use করে।</p>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Async iterator এর <code>next()</code> method <code>Promise</code> return করে</li>
         <li>Data async ভাবে fetch / generate করা হয়</li>
         <li><code>for await...of</code> loop দিয়ে easy iteration possible</li>
       </ol>
-      <hr>
+      
       <h3>Use Cases</h3>
       <ol>
         <li>Streaming APIs (like reading large files, network streams)</li>
         <li>Lazy fetching data asynchronously</li>
         <li>Non-blocking iteration</li>
       </ol>
-      <hr>
+      
       <p><strong>Async Iterator</strong> = JS এর iterator যা asynchronous data step-by-step yield করে; <code>for await...of</code> loop দিয়ে consume করা যায়; mostly streaming / async sequences handle করার জন্য।</p>
     `
 ,
@@ -750,7 +750,7 @@ counter(); // 3</code></pre>
     content: `
       <p>XMLHttpRequest (XHR) হলো JavaScript এর old-school API, যা web browser থেকে server এ HTTP request পাঠাতে &amp; response receive করতে use হয়।</p>
       <p>AJAX এর main component ছিল XHR। Fetch API আসার আগে server থেকে data asynchronously load করার জন্য এটা ছিল most common method।</p>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Browser এ HTTP request পাঠায় (<code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>)</li>
@@ -758,14 +758,14 @@ counter(); // 3</code></pre>
         <li>Response handle করতে <code>readyState</code> &amp; <code>status</code> check করতে হয়</li>
         <li>JSON, XML, plain text handle করা যায়</li>
       </ol>
-      <hr>
+      
       <h3>Limitations of XHR</h3>
       <ol>
         <li>Callback-based → nested callbacks এ easily callback hell হয়</li>
         <li>Less readable &amp; maintainable code</li>
         <li>Modern <code>fetch</code> API better, promise-based</li>
       </ol>
-      <hr>
+      
       <p><strong>XMLHttpRequest (XHR)</strong> = JS এর classic way to make HTTP requests, AJAX এর core, but callback-based, less readable—now mostly replaced by Fetch API।</p>
     `
 ,
@@ -777,21 +777,21 @@ counter(); // 3</code></pre>
     title: "What is the difference between sync and async code?",
     content: `
       <p>JavaScript এ <strong>synchronous (sync)</strong> vs <strong>asynchronous (async)</strong> code এর difference mainly <strong>execution order</strong> &amp; <strong>blocking behavior</strong> এর ওপর depend করে।</p>
-      <hr>
+      
       <h3>1) Synchronous Code (Sync)</h3>
       <ul>
         <li>Code <strong>line by line</strong> execute হয়</li>
         <li>একটা কাজ শেষ হওয়ার পর next কাজ start হয়</li>
         <li><strong>Blocking nature</strong> → long task হলে UI freeze / block হয়</li>
       </ul>
-      <hr>
+      
       <h3>2) Asynchronous Code (Async)</h3>
       <ul>
         <li>Code immediately next line এ jump করে, long running task background এ run করে</li>
         <li><strong>Non-blocking</strong> → UI responsive থাকে</li>
         <li>Callbacks, Promises, <code>async/await</code>, <code>setTimeout</code>, <code>fetch</code> → async task</li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <table>
         <thead>
@@ -819,7 +819,7 @@ counter(); // 3</code></pre>
           </tr>
         </tbody>
       </table>
-      <hr>
+      
       <p><strong>Sync</strong> = sequential, blocking</p>
       <p><strong>Async</strong> = parallel, non-blocking, future এ result</p>
       <p>JS mainly single-threaded, so async code <strong>event loop</strong> &amp; <strong>callback/microtask queue</strong> দিয়ে handle হয়।</p>
@@ -838,7 +838,7 @@ counter(); // 3</code></pre>
         <li><code>this</code> binding lexical → parent scope এর <code>this</code> maintain করে</li>
         <li>Code shorter &amp; cleaner হয়</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Concise syntax → one-liner expression possible</li>
@@ -846,7 +846,7 @@ counter(); // 3</code></pre>
         <li>Own <code>arguments</code> object নেই (need হলে rest operator <code>...args</code> use করা যায়)</li>
         <li>Callbacks, short functions, <code>map</code>/<code>filter</code>/<code>reduce</code> এর জন্য best</li>
       </ol>
-      <hr>
+      
       <p><strong>Arrow Functions</strong> = ES6 এর shorter, cleaner function syntax, lexical <code>this</code> maintain করে—mainly callbacks &amp; array methods এ use হয়।</p>
     `
 ,
@@ -880,7 +880,7 @@ counter(); // 3</code></pre>
         <li>Mostly array/object copy, merge, function arguments এর জন্য use হয়</li>
         <li>ES6 এ introduce করা হয়</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Expands iterable</li>
@@ -888,7 +888,7 @@ counter(); // 3</code></pre>
         <li>Merge &amp; append arrays/objects easily</li>
         <li>Function arguments pass করতে convenient</li>
       </ol>
-      <hr>
+      
       <p><strong>Spread Operator (</strong><code><strong>...</strong></code><strong>)</strong> = JS syntax যা array / object কে expand, merge, copy করতে দেয়—readable &amp; concise code এর জন্য perfect।</p>
     `
 ,
@@ -905,14 +905,14 @@ counter(); // 3</code></pre>
         <li><strong>Spread</strong> → expand করে</li>
         <li><strong>Rest</strong> → collect করে</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Function arguments collect করতে use হয়</li>
         <li>Array/Object এ remaining elements collect করতে use হয়</li>
         <li>Syntax spread এর মতোই, কিন্তু context অনুযায়ী behavior change হয়</li>
       </ol>
-      <hr>
+      
       <p><strong>Rest Operator (</strong><code><strong>...</strong></code><strong>)</strong> = JS syntax যা remaining elements/arguments কে collect করে array বা object এ—mainly variable arguments &amp; destructuring এর জন্য use হয়।</p>
     `
 ,
@@ -928,14 +928,14 @@ counter(); // 3</code></pre>
         <li>ES6 এ introduce করা হয়</li>
         <li>Traditional string এ <code>+</code> দিয়ে variable concatenate করতে হয়, কিন্তু template literal এ <code>\${}</code> use করা হয়</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Dynamic values interpolation easy</li>
         <li>Multi-line strings support করে</li>
         <li>Expression evaluation support করে</li>
       </ol>
-      <hr>
+      
       <p><strong>Template Literal</strong> = modern JS string syntax, যা <code>\${}</code> দিয়ে variable/expression embed করতে দেয়, multi-line strings handle করে—readable &amp; concise code এর জন্য perfect।</p>
     `
 ,
@@ -952,7 +952,7 @@ counter(); // 3</code></pre>
         <li>Traditional JS এ module handle করতে CommonJS / AMD use করা হতো</li>
         <li>Modern JS এ browser &amp; Node.js এর modern versions এ native support আছে</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>File-level scope — globally pollute করে না</li>
@@ -960,14 +960,14 @@ counter(); // 3</code></pre>
         <li>Named &amp; default export—দুইটাই support করে</li>
         <li>Browser &amp; Node.js modern versions এ fully supported</li>
       </ol>
-      <hr>
+      
       <h3>Benefits</h3>
       <ul>
         <li>Code modular &amp; maintainable হয়</li>
         <li>Reusability &amp; separation of concerns easy</li>
         <li>Modern bundlers (Webpack, Vite) easily optimize করে</li>
       </ul>
-      <hr>
+      
       <p><strong>ES Modules (ESM)</strong> = JS এর native module system, যা <code>import</code>/<code>export</code> দিয়ে code organize, reuse &amp; maintainable করতে help করে।</p>
     `
 ,
@@ -984,14 +984,14 @@ counter(); // 3</code></pre>
         <li>Import এর সময় curly braces লাগবে না</li>
         <li>Mostly main functionality / primary export এর জন্য use হয়</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>একটা module এ শুধু একটা default export possible</li>
         <li>Import এর সময় custom name দেওয়া যায়</li>
         <li>Named export এর সাথে combine করা যায়</li>
       </ol>
-      <hr>
+      
       <p><strong>Default Export</strong> = module এর primary value/function export; import এর সময় custom name use করা যায়; curly braces লাগে না; mostly main functionality represent করে।</p>
     `
 ,
@@ -1008,7 +1008,7 @@ counter(); // 3</code></pre>
         <li>Import এর সময় curly braces <code>{}</code> use করতে হয়</li>
         <li>Exported name exact same থাকতে হবে (unless alias use করা হয়)</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Multiple named exports possible</li>
@@ -1016,7 +1016,7 @@ counter(); // 3</code></pre>
         <li>Name match করতে হবে, optional alias use করা যায়</li>
         <li>Utility functions, constants, multiple components এর জন্য useful</li>
       </ol>
-      <hr>
+      
       <p><strong>Named Export</strong> = module এর multiple specific exports; import এর সময় curly braces দিয়ে access করা হয়; alias use করে name customize করা যায়; mostly helper functions/constants এর জন্য use হয়।</p>
     `
 ,
@@ -1028,21 +1028,21 @@ counter(); // 3</code></pre>
     title: "What is the difference between map and forEach?",
     content: `
       <p><code>map()</code> vs <code>forEach()</code> — দুটোই array method, কিন্তু use case &amp; return value আলাদা।</p>
-      <hr>
+      
       <h3>1) <code>forEach()</code></h3>
       <ul>
         <li><strong>Purpose:</strong> array এর প্রতিটা element এর উপর action perform করতে</li>
         <li><strong>Return value:</strong> <code>undefined</code></li>
         <li><strong>Mutation:</strong> array কে modify করতে পারে (original array change হতে পারে)</li>
       </ul>
-      <hr>
+      
       <h3>2) <code>map()</code></h3>
       <ul>
         <li><strong>Purpose:</strong> array এর প্রতিটা element transform করে <strong>new array</strong> return করে</li>
         <li><strong>Return value:</strong> new array</li>
         <li><strong>Original array:</strong> unchanged থাকে</li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <ul>
         <li><code>forEach()</code> = iterate + side effect, no return</li>
@@ -1058,28 +1058,28 @@ counter(); // 3</code></pre>
     title: "What is the difference between map, filter, reduce?",
     content: `
       <p><code>map()</code>, <code>filter()</code>, <code>reduce()</code> — তিনটা array higher-order methods, কিন্তু use case &amp; return value আলাদা।</p>
-      <hr>
+      
       <h3>1) <code>map()</code></h3>
       <ul>
         <li><strong>Purpose:</strong> array এর প্রতিটা element কে transform করে new array return করে</li>
         <li><strong>Original array:</strong> unchanged</li>
         <li><strong>Return value:</strong> new array</li>
       </ul>
-      <hr>
+      
       <h3>2) <code>filter()</code></h3>
       <ul>
         <li><strong>Purpose:</strong> array এর মধ্যে certain condition match করা elements select করে return করে</li>
         <li><strong>Original array:</strong> unchanged</li>
         <li><strong>Return value:</strong> new array</li>
       </ul>
-      <hr>
+      
       <h3>3) <code>reduce()</code></h3>
       <ul>
         <li><strong>Purpose:</strong> array কে aggregate করে single value তে convert করে</li>
         <li><strong>Original array:</strong> unchanged</li>
         <li><strong>Return value:</strong> single value (number, string, object, etc.)</li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <ul>
         <li><code>map()</code> → element transform, array return</li>
@@ -1096,7 +1096,7 @@ counter(); // 3</code></pre>
     title: "Explain Set and Map",
     content: `
       <p><code>Set</code> এবং <code>Map</code> হলো JavaScript এর built-in collection objects, কিন্তু দুটির purpose &amp; behavior আলাদা।</p>
-      <hr>
+      
       <h3>1) <code>Set</code></h3>
       <ul>
         <li><strong>Definition:</strong> unique values এর collection</li>
@@ -1104,7 +1104,7 @@ counter(); // 3</code></pre>
         <li><strong>Order:</strong> insertion order maintain করে</li>
         <li><strong>Use case:</strong> unique values store করা &amp; quick lookup</li>
       </ul>
-      <hr>
+      
       <h3>2) <code>Map</code></h3>
       <ul>
         <li><strong>Definition:</strong> key-value pairs এর collection</li>
@@ -1112,7 +1112,7 @@ counter(); // 3</code></pre>
         <li><strong>Order:</strong> insertion order maintain করে</li>
         <li><strong>Use case:</strong> dictionary / lookup table</li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <ul>
         <li><code>Set</code> = unique values collection, duplicates ignore করে</li>
@@ -1129,7 +1129,7 @@ counter(); // 3</code></pre>
     content: `
       <p><code>WeakSet</code> এবং <code>WeakMap</code> হলো JavaScript এর special collection objects, যেগুলো garbage collection friendly।</p>
       <p>Normal <code>Set</code>/<code>Map</code> strong references রাখে, কিন্তু <code>WeakSet</code>/<code>WeakMap</code> এ object reference lose হলে automatically memory free হয়ে যেতে পারে। Mainly memory management &amp; temporary storage এর জন্য use হয়।</p>
-      <hr>
+      
       <h3>1) <code>WeakSet</code></h3>
       <ul>
         <li><strong>What it stores:</strong> শুধু objects (primitive type add করা যায় না)</li>
@@ -1137,7 +1137,7 @@ counter(); // 3</code></pre>
         <li><strong>Iteration:</strong> not iterable, <code>size</code> property নেই</li>
         <li><strong>GC behavior:</strong> কোনো object এর আর reference না থাকলে garbage collector automatically remove করতে পারে</li>
       </ul>
-      <hr>
+      
       <h3>2) <code>WeakMap</code></h3>
       <ul>
         <li><strong>What it stores:</strong> key-value pairs</li>
@@ -1146,7 +1146,7 @@ counter(); // 3</code></pre>
         <li><strong>Iteration:</strong> not iterable, <code>size</code> property নেই</li>
         <li><strong>GC behavior:</strong> কোনো key object এর আর reference না থাকলে garbage collector automatically remove করতে পারে</li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <ul>
         <li><code>WeakSet</code> = unique objects collection, no iteration, auto GC</li>
@@ -1168,14 +1168,14 @@ counter(); // 3</code></pre>
         <li>Mainly object property keys এর জন্য use হয়, যাতে name collision না হয়</li>
         <li>Primitive type → like number, string, boolean</li>
       </ul>
-      <hr>
+      
       <h3>Benefits of Symbols</h3>
       <ol>
         <li>Unique property keys → accidental overwrite prevent করে</li>
         <li>Hidden properties → iteration methods ignore করে</li>
         <li>Well-known symbols define করতে use হয় (like <code>Symbol.iterator</code>)</li>
       </ol>
-      <hr>
+      
       <p><strong>Symbols</strong> = JS এর unique, immutable primitive, mostly object keys এর জন্য use হয়—name collision prevent &amp; hidden properties এর জন্য perfect।</p>
     `
 ,
@@ -1192,7 +1192,7 @@ counter(); // 3</code></pre>
         <li>কোনো property <code>undefined</code> / <code>null</code> হলে error throw করে না—<code>undefined</code> return করে</li>
         <li>Mainly safe property access এর জন্য use হয়</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ul>
         <li>Prevent TypeError: Cannot read property</li>
@@ -1200,7 +1200,7 @@ counter(); // 3</code></pre>
         <li>Function calls &amp; array indexes এর সাথে use করা যায়</li>
         <li>Cleaner &amp; readable code</li>
       </ul>
-      <hr>
+      
       <p><strong>Optional Chaining (</strong><code><strong>?.</strong></code><strong>)</strong> = JS syntax যা <code>undefined</code>/<code>null</code> check করতে help করে, nested property / function call এর সময় error avoid করে—safe &amp; readable code এর জন্য perfect।</p>
     `
 ,
@@ -1222,7 +1222,7 @@ counter(); // 3</code></pre>
         <li><code>||</code> falsy value (<code>0</code>, <code>""</code>, <code>false</code>) হলেও replace করে</li>
         <li>কিন্তু <code>??</code> শুধু <code>null</code>/<code>undefined</code> replace করে—falsy values preserve করে</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>Nullish Coalescing = <code>??</code></li>
@@ -1230,7 +1230,7 @@ counter(); // 3</code></pre>
         <li>Falsy values like <code>0</code>, <code>""</code>, <code>false</code> keep করে</li>
         <li>Cleaner default assignment</li>
       </ol>
-      <hr>
+      
       <p><strong>Nullish Coalescing (</strong><code><strong>??</strong></code><strong>)</strong> = JS operator যা <code>null/undefined</code> কে default value দিয়ে replace করে, falsy values কে preserve করে—safe &amp; readable default assignment এর জন্য perfect।</p>
     `
 ,
@@ -1245,7 +1245,7 @@ counter(); // 3</code></pre>
       <p>Browser web page কে tree structure তে convert করে → element = node।</p>
       <p>HTML / XML document কে nodes &amp; objects এ represent করে।</p>
       <p>JS / CSS দিয়ে elements modify, add, delete করা possible।</p>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li>DOM = web page structure representation</li>
@@ -1253,7 +1253,7 @@ counter(); // 3</code></pre>
         <li>Node types: element, text, attribute</li>
         <li>Dynamic content update, style change, event handling allow করে</li>
       </ol>
-      <hr>
+      
       <p><strong>DOM</strong> = web page এর object-based representation, যা JavaScript দিয়ে dynamically manipulate করা যায়—page এর content, structure &amp; style control এর জন্য perfect।</p>
     `
 ,
@@ -1265,7 +1265,7 @@ counter(); // 3</code></pre>
     title: "What is the difference between HTMLCollection and NodeList?",
     content: `
       <p><code>HTMLCollection</code> এবং <code>NodeList</code>—দুটোই DOM থেকে nodes/elements এর list return করে, কিন্তু behavior &amp; methods আলাদা।</p>
-      <hr>
+      
       <h3>1) <code>HTMLCollection</code></h3>
       <ul>
         <li><strong>Mostly live collection</strong> → DOM update হলে automatically reflect হয়</li>
@@ -1278,7 +1278,7 @@ counter(); // 3</code></pre>
           </ul>
         </li>
       </ul>
-      <hr>
+      
       <h3>2) <code>NodeList</code></h3>
       <ul>
         <li><strong>Live বা static হতে পারে</strong>
@@ -1296,7 +1296,7 @@ counter(); // 3</code></pre>
           </ul>
         </li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <ul>
         <li><code>HTMLCollection</code> = live, element-only, old-school DOM methods</li>
@@ -1318,7 +1318,7 @@ counter(); // 3</code></pre>
         <li>তারপর parent → ancestor elements এ ছড়িয়ে পড়ে</li>
         <li>By default, most events (যেমন <code>click</code>, <code>input</code>, <code>keydown</code>) bubbling করে</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li><strong>Bottom → Top</strong> event flow</li>
@@ -1326,7 +1326,7 @@ counter(); // 3</code></pre>
         <li><code>e.stopPropagation()</code> ব্যবহার করে propagation stop করা যায়</li>
         <li>Event delegation বা parent-level handling এর জন্য useful</li>
       </ol>
-      <hr>
+      
       <p><strong>Event Bubbling</strong> = JS এর event propagation technique, যা child element থেকে parent এর দিকে যায় — default behavior, যা <code>stopPropagation()</code> দিয়ে control করা যায়।</p>
     `
 ,
@@ -1343,7 +1343,7 @@ counter(); // 3</code></pre>
         <li>তারপর target element এ event reach করে</li>
         <li>Event bubbling এর opposite</li>
       </ul>
-      <hr>
+      
       <h3>Key Points</h3>
       <ol>
         <li><strong>Top → Bottom</strong> event flow</li>
@@ -1351,7 +1351,7 @@ counter(); // 3</code></pre>
         <li>By default <code>false</code> → bubbling mode</li>
         <li>Ancestor-level pre-processing এর জন্য useful</li>
       </ol>
-      <hr>
+      
       <p><strong>Event Capturing</strong> = JS এর event propagation technique, যা parent → child direction এ event propagate করে; bubbling এর opposite; capturing mode <code>addEventListener(..., true)</code> দিয়ে enable করা হয়।</p>
     `
 ,
@@ -1405,7 +1405,7 @@ counter(); // 3</code></pre>
     title: "sessionStorage vs localStorage",
     content: `
       <p><code>sessionStorage</code> এবং <code>localStorage</code>—দুটোই Web Storage API এর part, কিন্তু lifetime &amp; scope আলাদা।</p>
-      <hr>
+      
       <h3>1) <code>localStorage</code></h3>
       <ul>
         <li><strong>Lifetime:</strong> Persistent → browser close/reopen ও থাকে</li>
@@ -1413,7 +1413,7 @@ counter(); // 3</code></pre>
         <li><strong>Storage limit:</strong> ~5–10MB</li>
         <li><strong>Use case:</strong> user preferences, theme, auth token store করতে</li>
       </ul>
-      <hr>
+      
       <h3>2) <code>sessionStorage</code></h3>
       <ul>
         <li><strong>Lifetime:</strong> tab/session এর জন্য → browser/tab close করলে delete হয়</li>
@@ -1421,7 +1421,7 @@ counter(); // 3</code></pre>
         <li><strong>Storage limit:</strong> ~5MB</li>
         <li><strong>Use case:</strong> temporary data, form state, tab-specific data</li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <ul>
         <li><code>localStorage</code> = persistent, browser close/reopen ও থাকে, long-term data</li>
@@ -1437,7 +1437,7 @@ counter(); // 3</code></pre>
     title: "cookie vs localStorage vs sessionStorage",
     content: `
       <p>Cookie, <code>localStorage</code>, এবং <code>sessionStorage</code>—তিনটাই client-side storage, কিন্তু purpose, lifetime, size, accessibility আলাদা।</p>
-      <hr>
+      
       <h3>1) Cookie</h3>
       <ul>
         <li><strong>Lifetime:</strong> <code>expires</code> / <code>max-age</code> দিয়ে define করা → persistent বা session</li>
@@ -1445,7 +1445,7 @@ counter(); // 3</code></pre>
         <li><strong>Accessibility:</strong> server &amp; client উভয় accessible (HTTP request এর সাথে send হয়)</li>
         <li><strong>Use case:</strong> authentication token, server-side data sync</li>
       </ul>
-      <hr>
+      
       <h3>2) <code>localStorage</code></h3>
       <ul>
         <li><strong>Lifetime:</strong> Persistent → browser close/reopen ও থাকে</li>
@@ -1453,7 +1453,7 @@ counter(); // 3</code></pre>
         <li><strong>Accessibility:</strong> client-side only, server এ send হয় না</li>
         <li><strong>Use case:</strong> user preferences, theme, long-term client-side storage</li>
       </ul>
-      <hr>
+      
       <h3>3) <code>sessionStorage</code></h3>
       <ul>
         <li><strong>Lifetime:</strong> tab/session only → tab close করলে delete হয়</li>
@@ -1461,7 +1461,7 @@ counter(); // 3</code></pre>
         <li><strong>Accessibility:</strong> client-side only, server এ send হয় না</li>
         <li><strong>Use case:</strong> temporary data, form state, session-specific storage</li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <ul>
         <li><strong>Cookie</strong> = small, server &amp; client accessible, mostly auth/token</li>
@@ -1478,21 +1478,21 @@ counter(); // 3</code></pre>
     title: "What is the difference between innerHTML and textContent?",
     content: `
       <p><code>innerHTML</code> এবং <code>textContent</code>—দুটো DOM element property, কিন্তু behavior &amp; use case আলাদা।</p>
-      <hr>
+      
       <h3>1) <code>innerHTML</code></h3>
       <ul>
         <li><strong>Purpose:</strong> element এর HTML content read / write করতে</li>
         <li><strong>Behavior:</strong> HTML parse করে, tags interpret করে</li>
         <li><strong>Use case:</strong> dynamically HTML insert করতে</li>
       </ul>
-      <hr>
+      
       <h3>2) <code>textContent</code></h3>
       <ul>
         <li><strong>Purpose:</strong> element এর plain text read / write করতে</li>
         <li><strong>Behavior:</strong> tags কে ignore করে, শুধু text handle করে</li>
         <li><strong>Use case:</strong> only text content update / read করতে</li>
       </ul>
-      <hr>
+      
       <h3>Summary</h3>
       <ul>
         <li><code>innerHTML</code> = HTML + text, tags render, dynamic HTML insert</li>
@@ -1512,7 +1512,7 @@ counter(); // 3</code></pre>
         <li><strong>Reflow</strong> = layout calculation</li>
         <li><strong>Repaint</strong> = visual update / style change</li>
       </ul>
-      <hr>
+      
       <h3>1) Reflow (Layout)</h3>
       <ul>
         <li><strong>Definition:</strong> browser DOM element এর position, size, geometry calculate করে</li>
@@ -1525,7 +1525,7 @@ counter(); // 3</code></pre>
         </li>
         <li><strong>Performance:</strong> heavy → frequent reflows avoid করা ভালো</li>
       </ul>
-      <hr>
+      
       <h3>2) Repaint (Paint / Rendering)</h3>
       <ul>
         <li><strong>Definition:</strong> layout change না করে browser visual appearance update করে</li>
