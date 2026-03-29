@@ -21,6 +21,13 @@
   <div class="mobile-appbar">
     <div class="appbar-content">
       <h2 class="appbar-title">JS Interview</h2>
+      <div class="select-wrapper" style="max-width: 85px; margin: 0 6px;">
+        <select id="mobileVersionSelect" onchange="handleVersionChange(this)">
+          <option value="v1">V1</option>
+          <option value="v2-bn" selected>V2</option>
+          <option value="v2-en">V2 (En)</option>
+        </select>
+      </div>
       <div class="appbar-actions">
         <button class="appbar-btn" onclick="toggleTheme()" aria-label="Toggle theme">
           <i id="mobile-theme-icon"></i>
@@ -115,6 +122,13 @@
     <div class="header">
       <h1 class="page-title">JavaScript Interview Questions</h1>
       <p class="subtitle">Master JavaScript concepts with 70+ curated questions</p>
+      <div class="select-wrapper" style="max-width: 300px; margin: 20px auto 0;">
+        <select id="versionSelect" onchange="handleVersionChange(this)">
+          <option value="v1">V1</option>
+          <option value="v2-bn" selected>V2 (বাংলা)</option>
+          <option value="v2-en">V2 (English)</option>
+        </select>
+      </div>
     </div>
 
     <!-- Resume Reading Banner -->
@@ -170,27 +184,9 @@
             <option value="uncompleted">Not Completed</option>
           </select>
         </div>
-        <div class="select-wrapper">
-          <select id="questionsPerPage" onchange="changeQuestionsPerPage()">
-            <option value="5">5 per page</option>
-            <option value="10" selected>10 per page</option>
-            <option value="20">20 per page</option>
-            <option value="50">50 per page</option>
-            <option value="all">Show All</option>
-          </select>
-        </div>
+
       </div>
-      <div class="toolbar-row">
-        <button class="btn btn-secondary" onclick="expandAll()">
-          <i class="fas fa-expand-alt"></i> Expand All
-        </button>
-        <button class="btn btn-secondary" onclick="collapseAll()">
-          <i class="fas fa-compress-alt"></i> Collapse All
-        </button>
-        <button class="btn btn-secondary" onclick="clearAllProgress()">
-          <i class="fas fa-redo"></i> Reset Progress
-        </button>
-      </div>
+
     </div>
 
     <!-- Questions Container -->
@@ -231,6 +227,7 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <script src="scripts/questionsData.js"></script>
+  <script src="scripts/questionsDataV2.js"></script>
   <script src="scripts/logic.js">
   </script>
 

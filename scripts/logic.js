@@ -1,3 +1,44 @@
+// Active questions data
+const savedVersion = parseInt(localStorage.getItem("version")) || 2;
+const savedLang = localStorage.getItem("language") || "bn";
+let questionsData = savedVersion === 1 ? questionsDataV1 : (savedLang === "bn" ? questionsDataV2 : questionsDataV2En);
+
+// Handle version change from dropdown
+function handleVersionChange(selectElement) {
+  const value = selectElement.value;
+  
+  if (value === "v1") {
+    questionsData = questionsDataV1;
+    localStorage.setItem("version", 1);
+    localStorage.setItem("language", "bn");
+    showToast("Switched to Version 1", "success");
+  } else if (value === "v2-bn") {
+    questionsData = questionsDataV2;
+    localStorage.setItem("version", 2);
+    localStorage.setItem("language", "bn");
+    showToast("Switched to V2 (Bangla)", "success");
+  } else if (value === "v2-en") {
+    questionsData = questionsDataV2En;
+    localStorage.setItem("version", 2);
+    localStorage.setItem("language", "en");
+    showToast("Switched to V2 (English)", "success");
+  }
+  
+  // Sync both dropdowns
+  const versionSelect = document.getElementById("versionSelect");
+  const mobileSelect = document.getElementById("mobileVersionSelect");
+  if (versionSelect) versionSelect.value = value;
+  if (mobileSelect) mobileSelect.value = value;
+  
+  state.currentPage = 1;
+  state.searchQuery = "";
+  state.filter = "all";
+  state.expandedQuestions.clear();
+  document.getElementById("searchInput").value = "";
+  document.getElementById("filterSelect").value = "all";
+  renderQuestions();
+}
+
 // App State
 let state = {
   currentPage: 1,
@@ -739,6 +780,24 @@ function init() {
 
   // Render questions
   renderQuestions();
+
+  // Sync version dropdown
+  const v = parseInt(localStorage.getItem("version")) || 2;
+  const lang = localStorage.getItem("language") || "bn";
+  const versionSelect = document.getElementById("versionSelect");
+  const mobileVersionSelect = document.getElementById("mobileVersionSelect");
+  
+  let selectedValue = "v2-bn";
+  if (v === 1) {
+    selectedValue = "v1";
+  } else if (lang === "bn") {
+    selectedValue = "v2-bn";
+  } else {
+    selectedValue = "v2-en";
+  }
+  
+  if (versionSelect) versionSelect.value = selectedValue;
+  if (mobileVersionSelect) mobileVersionSelect.value = selectedValue;
 
   // Check for resume
   checkResume();
