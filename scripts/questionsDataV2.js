@@ -23,7 +23,7 @@ const questionsDataV2 = [
         <li>Declaration এর সময়ই value assign করে দিতে হয়।</li>
         <li>Primitive value Re-assign করা যায় না।</li>
         <li>তবে const দিয়ে declare করা object/array এর ভিতরের value change করা যায়, শুধু reassign করা যায় না।</li>
-        <li>Hoisting হয়।</li>
+        <li>Hoisting হয়, তবে temporal dead zone (TDZ) এ থাকে।</li>
       </ul>
       <p><strong>মনে রাখার টিপস:</strong> const = "box টা fix, কিন্তু box এর ভিতরের জিনিস নাড়াচাড়া করা যায়"</p>
     `,
@@ -2593,7 +2593,7 @@ const questionsDataV2En = [
         <li>Must assign value when declaring</li>
         <li>Cannot re-assign primitive values</li>
         <li>But can modify object/array contents (only reference is fixed)</li>
-        <li>Hoisted</li>
+        <li>Hoisted but stays in Temporal Dead Zone (TDZ)</li>
       </ul>
       <p><strong>Remember:</strong> const = "box is fixed, but items inside can change"</p>
     `,
