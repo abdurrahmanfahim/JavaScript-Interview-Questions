@@ -779,6 +779,23 @@ switch (e.key) {
 }
 });
 
+// Install Banner
+function dismissInstallBanner() {
+  document.getElementById("installBanner").classList.add("hidden");
+  localStorage.setItem("installBannerDismissed", Date.now());
+}
+
+function checkInstallBanner() {
+  const dismissed = localStorage.getItem("installBannerDismissed");
+  const oneMonth = 30 * 24 * 60 * 60 * 1000;
+  if (!dismissed || Date.now() - parseInt(dismissed) > oneMonth) {
+    setTimeout(() => {
+      const banner = document.getElementById("installBanner");
+      if (banner) banner.classList.remove("hidden");
+    }, 3000);
+  }
+}
+
 // Initialize
 function init() {
   // Load saved theme
@@ -817,6 +834,9 @@ function init() {
 
   // Check for resume
   checkResume();
+
+  // Check install banner
+  checkInstallBanner();
 
   // Show welcome toast
   showToast("Welcome! Press ? for keyboard shortcuts", "info");
