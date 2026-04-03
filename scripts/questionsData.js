@@ -1,4 +1,4 @@
-const questionsDataV1 = [
+﻿const questionsDataV1 = [
   {
     id: 1,
     title: "What is the difference between var, let, and const?",
@@ -25,7 +25,6 @@ const questionsDataV1 = [
         <li>Hoisting হয়।</li>
       </ul>
     `,
-    difficulty: "Easy",
     tags: ["Variables", "JavaScript Basics"]
   },
   {
@@ -40,8 +39,6 @@ const questionsDataV1 = [
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 3,
@@ -63,8 +60,6 @@ const questionsDataV1 = [
 }</code></pre>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 4,
@@ -91,8 +86,6 @@ counter(); // 2
 counter(); // 3</code></pre>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 5,
@@ -107,8 +100,6 @@ counter(); // 3</code></pre>
       <p>HOF mainly callback, <code>map</code>, <code>filter</code>, <code>reduce</code>, etc. এর জন্য use হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 6,
@@ -122,8 +113,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 7,
@@ -134,8 +123,6 @@ counter(); // 3</code></pre>
       <p>Call Stack, Web APIs, Callback Queue, এবং Event Loop—মিলে async tasks manage করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 8,
@@ -150,8 +137,6 @@ counter(); // 3</code></pre>
       <p><strong>Examples:</strong> <code>Promise.then</code>, <code>process.nextTick</code></p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 9,
@@ -161,8 +146,6 @@ counter(); // 3</code></pre>
       <p><strong>Use case:</strong> <code>scroll</code>, <code>resize</code>, <code>input</code> events—যেখানে function বারবার call হয়, CPU load বাড়ায়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 10,
@@ -176,8 +159,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 11,
@@ -191,8 +172,6 @@ counter(); // 3</code></pre>
       <p>Currying = একটা function কে nested single-argument functions এ convert করা, যাতে arguments step by step pass করা যায়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 12,
@@ -211,8 +190,6 @@ counter(); // 3</code></pre>
       <p>Pure function = same input → same output, no side effect, functional programming এ important concept।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 13,
@@ -227,8 +204,6 @@ counter(); // 3</code></pre>
       <p>Immutability = original data change না করে, new copy create করে modification। State management এ (React, Redux) এটা খুব important।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 14,
@@ -241,8 +216,6 @@ counter(); // 3</code></pre>
       <p>this = current execution context এর object reference, value call site এর basis এ decide হয়, regular function, object method, constructor, arrow function এর জন্য behavior আলাদা।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 15,
@@ -256,8 +229,6 @@ counter(); // 3</code></pre>
       <p>IIFE = function যে immediately call হয় declare এর সাথে সাথে, mainly scope protection and encapsulation এর জন্য use হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 16,
@@ -272,8 +243,6 @@ counter(); // 3</code></pre>
       <p>Prototype = object এর blueprint, যা methods &amp; properties inheritance এর জন্য share করে, and prototype chain এর মাধ্যমে property search করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 17,
@@ -287,8 +256,6 @@ counter(); // 3</code></pre>
       <p>Prototypal Inheritance = object এর object কে inherit করে properties &amp; methods share করা, JavaScript এর core inheritance mechanism, class এর alternative।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 18,
@@ -310,8 +277,6 @@ counter(); // 3</code></pre>
       <p>Strict Mode = JavaScript এর stricter execution context, যা errors detect করে, unsafe practices block করে, and better performance &amp; maintainable code ensure করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 19,
@@ -339,8 +304,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 20,
@@ -366,8 +329,6 @@ counter(); // 3</code></pre>
       <p>Type Coercion = value এর type automatic or manually convert করা যাতে expression or operation সঠিকভাবে execute হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 21,
@@ -394,8 +355,6 @@ counter(); // 3</code></pre>
       <p>Promise = asynchronous result এর একটা container, যা future এ success or failure return করে, and JS asynchronous code কে clean, structured, error-handled করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 22,
@@ -427,8 +386,6 @@ counter(); // 3</code></pre>
       <p>async/await = Promises এর উপর একটা syntactic sugar, যা asynchronous code কে serial, readable &amp; maintainable করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 23,
@@ -451,8 +408,6 @@ counter(); // 3</code></pre>
       <p><strong>Callback Hell</strong> = deeply nested callbacks এর জন্য code যখন messy, unreadable, maintain করা impossible হয়ে যায়। Solution হলো <strong>Promises</strong> and <strong>async/await</strong>।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 24,
@@ -472,8 +427,6 @@ counter(); // 3</code></pre>
       <p><strong>Promise Chaining</strong> = multiple asynchronous task কে sequence এ run করা using <code>.then()</code>, যাতে code clean &amp; manageable হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 25,
@@ -499,8 +452,6 @@ counter(); // 3</code></pre>
       </ol>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 26,
@@ -527,8 +478,6 @@ counter(); // 3</code></pre>
       <p><strong>Promise.race()</strong> = multiple promises এর মধ্যে যে first complete হবে, তার result return করে, বাকি গুলো ignore।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 27,
@@ -548,8 +497,6 @@ counter(); // 3</code></pre>
       <p><strong>Promise.any()</strong> = first successful promise কে return করে; সব fail হলে <code>AggregateError</code> দেয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 28,
@@ -575,8 +522,6 @@ counter(); // 3</code></pre>
       <p><strong>Promise.allSettled()</strong> = সব promise complete হওয়ার পর success &amp; failure এর full report return করে, একটা fail হলেও reject করে না।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 29,
@@ -618,8 +563,6 @@ counter(); // 3</code></pre>
       </ol>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 30,
@@ -659,8 +602,6 @@ counter(); // 3</code></pre>
       <p><strong>Summary:</strong> JS code single-threaded, কিন্তু browser internally multi-thread use করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 31,
@@ -687,8 +628,6 @@ counter(); // 3</code></pre>
       <p><strong>Web Worker</strong> = JS এর background thread, main thread কে block না করে heavy tasks execute করে, UI smooth রাখতে help করে; DOM direct access করতে পারে না—message passing দিয়ে communicate করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 32,
@@ -714,8 +653,6 @@ counter(); // 3</code></pre>
       <p><strong>Async Iterator</strong> = JS এর iterator যা asynchronous data step-by-step yield করে; <code>for await...of</code> loop দিয়ে consume করা যায়; mostly streaming / async sequences handle করার জন্য।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 33,
@@ -741,8 +678,6 @@ counter(); // 3</code></pre>
       <p><strong>Fetch API</strong> = JS এর modern HTTP request method, Promise-based, clean syntax, XHR replacement—modern web development এ standard approach।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 34,
@@ -769,8 +704,6 @@ counter(); // 3</code></pre>
       <p><strong>XMLHttpRequest (XHR)</strong> = JS এর classic way to make HTTP requests, AJAX এর core, but callback-based, less readable—now mostly replaced by Fetch API।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 35,
@@ -825,8 +758,6 @@ counter(); // 3</code></pre>
       <p>JS mainly single-threaded, so async code <strong>event loop</strong> &amp; <strong>callback/microtask queue</strong> দিয়ে handle হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 36,
@@ -850,8 +781,6 @@ counter(); // 3</code></pre>
       <p><strong>Arrow Functions</strong> = ES6 এর shorter, cleaner function syntax, lexical <code>this</code> maintain করে—mainly callbacks &amp; array methods এ use হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 37,
@@ -868,8 +797,6 @@ counter(); // 3</code></pre>
       <p><strong>Destructuring</strong> = JS syntax যা array/object এর values কে easily variable এ extract করতে দেয়—code readable &amp; maintainable করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 38,
@@ -892,8 +819,6 @@ counter(); // 3</code></pre>
       <p><strong>Spread Operator (</strong><code><strong>...</strong></code><strong>)</strong> = JS syntax যা array / object কে expand, merge, copy করতে দেয়—readable &amp; concise code এর জন্য perfect।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 39,
@@ -916,8 +841,6 @@ counter(); // 3</code></pre>
       <p><strong>Rest Operator (</strong><code><strong>...</strong></code><strong>)</strong> = JS syntax যা remaining elements/arguments কে collect করে array বা object এ—mainly variable arguments &amp; destructuring এর জন্য use হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 40,
@@ -939,8 +862,6 @@ counter(); // 3</code></pre>
       <p><strong>Template Literal</strong> = modern JS string syntax, যা <code>\${}</code> দিয়ে variable/expression embed করতে দেয়, multi-line strings handle করে—readable &amp; concise code এর জন্য perfect।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 41,
@@ -971,8 +892,6 @@ counter(); // 3</code></pre>
       <p><strong>ES Modules (ESM)</strong> = JS এর native module system, যা <code>import</code>/<code>export</code> দিয়ে code organize, reuse &amp; maintainable করতে help করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 42,
@@ -995,8 +914,6 @@ counter(); // 3</code></pre>
       <p><strong>Default Export</strong> = module এর primary value/function export; import এর সময় custom name use করা যায়; curly braces লাগে না; mostly main functionality represent করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 43,
@@ -1020,8 +937,6 @@ counter(); // 3</code></pre>
       <p><strong>Named Export</strong> = module এর multiple specific exports; import এর সময় curly braces দিয়ে access করা হয়; alias use করে name customize করা যায়; mostly helper functions/constants এর জন্য use হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 44,
@@ -1050,8 +965,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 45,
@@ -1088,8 +1001,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 46,
@@ -1120,8 +1031,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 47,
@@ -1155,8 +1064,6 @@ counter(); // 3</code></pre>
       <p>Mainly temporary storage &amp; memory optimization এর জন্য use হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 48,
@@ -1179,8 +1086,6 @@ counter(); // 3</code></pre>
       <p><strong>Symbols</strong> = JS এর unique, immutable primitive, mostly object keys এর জন্য use হয়—name collision prevent &amp; hidden properties এর জন্য perfect।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 49,
@@ -1204,8 +1109,6 @@ counter(); // 3</code></pre>
       <p><strong>Optional Chaining (</strong><code><strong>?.</strong></code><strong>)</strong> = JS syntax যা <code>undefined</code>/<code>null</code> check করতে help করে, nested property / function call এর সময় error avoid করে—safe &amp; readable code এর জন্য perfect।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 50,
@@ -1234,8 +1137,6 @@ counter(); // 3</code></pre>
       <p><strong>Nullish Coalescing (</strong><code><strong>??</strong></code><strong>)</strong> = JS operator যা <code>null/undefined</code> কে default value দিয়ে replace করে, falsy values কে preserve করে—safe &amp; readable default assignment এর জন্য perfect।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 51,
@@ -1257,8 +1158,6 @@ counter(); // 3</code></pre>
       <p><strong>DOM</strong> = web page এর object-based representation, যা JavaScript দিয়ে dynamically manipulate করা যায়—page এর content, structure &amp; style control এর জন্য perfect।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 52,
@@ -1305,8 +1204,6 @@ counter(); // 3</code></pre>
       <p>Modern JS এ usually <code>querySelectorAll()</code> + <code>forEach()</code> বেশি convenient।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 53,
@@ -1330,8 +1227,6 @@ counter(); // 3</code></pre>
       <p><strong>Event Bubbling</strong> = JS এর event propagation technique, যা child element থেকে parent এর দিকে যায় — default behavior, যা <code>stopPropagation()</code> দিয়ে control করা যায়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 54,
@@ -1355,8 +1250,6 @@ counter(); // 3</code></pre>
       <p><strong>Event Capturing</strong> = JS এর event propagation technique, যা parent → child direction এ event propagate করে; bubbling এর opposite; capturing mode <code>addEventListener(..., true)</code> দিয়ে enable করা হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 55,
@@ -1375,8 +1268,6 @@ counter(); // 3</code></pre>
       <p><strong>Event Delegation</strong> = JS এর technique যা parent listener দিয়ে child elements এর events handle করে, dynamic content support &amp; performance optimized, bubbling এর ওপর depend করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 56,
@@ -1397,8 +1288,6 @@ counter(); // 3</code></pre>
       <p><strong>localStorage</strong> = JS client-side persistent key-value storage, string only, browser close হলেও থাকে, object store করতে JSON.stringify/parse use করা লাগে, lightweight data persist করতে perfect।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 57,
@@ -1429,8 +1318,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 58,
@@ -1470,8 +1357,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 59,
@@ -1500,8 +1385,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 60,
@@ -1540,8 +1423,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 61,
@@ -1585,8 +1466,6 @@ counter(); // 3</code></pre>
       </ul>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 62,
@@ -1606,8 +1485,6 @@ counter(); // 3</code></pre>
       <p><strong>CORS</strong> = JS/browser এর security feature, যা cross-origin requests control করে; allow/deny করতে server headers use করে; secure client-server communication এর জন্য important।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 63,
@@ -1629,8 +1506,6 @@ counter(); // 3</code></pre>
       <p><strong>Preflight Request</strong> = browser এর <code>OPTIONS</code> request, যা CORS complex request এর আগে server কে check করে origin/method/header allow করা হয় কিনা—security maintain এর জন্য mandatory।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 64,
@@ -1652,8 +1527,6 @@ counter(); // 3</code></pre>
       <p><strong>Service Worker</strong> = JS file যা browser background এ run করে, network requests intercept করে, offline caching, push notifications, background sync handle করে—Progressive Web App এর core technology।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 65,
@@ -1679,8 +1552,6 @@ counter(); // 3</code></pre>
       <p><strong>PWA</strong> = Progressive Web App, যা web এর convenience + native app এর features provide করে—offline, installable, responsive, fast &amp; secure; modern web development এর একটা important trend।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 66,
@@ -1706,8 +1577,6 @@ counter(); // 3</code></pre>
       <p><strong>requestAnimationFrame</strong> = JS API যা browser repaint এর সাথে sync করে callback execute করে, smooth &amp; efficient animation provide করে—performance-friendly, modern web animation এর standard approach।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 67,
@@ -1726,8 +1595,6 @@ counter(); // 3</code></pre>
       <p><strong>Lazy Loading</strong> = resource load delay করা until needed, initial load fast করে, bandwidth &amp; memory save করে—modern web &amp; React apps এ commonly use হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 68,
@@ -1750,8 +1617,6 @@ counter(); // 3</code></pre>
       <p><strong>Browser Caching</strong> = website resources locally store করা; next visit এ cache use করে fast load &amp; bandwidth save; cache headers server control করে; web performance &amp; UX improve করে।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   },
   {
     id: 69,
@@ -1775,7 +1640,5 @@ counter(); // 3</code></pre>
       <p><strong>Memory Leak</strong> = JS এ unused memory release না হওয়া → performance degrade করে; SPAs / long-running apps এ serious problem। Common cause: global variables, detached DOM, uncleaned timers, closures। Detect &amp; prevent করতে DevTools use করতে হয়।</p>
     `
 ,
-  difficulty: 'Medium',
-  tags: []
   }
 ];

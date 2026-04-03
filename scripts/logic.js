@@ -1,7 +1,7 @@
 // Active questions data
 const savedVersion = parseInt(localStorage.getItem("version")) || 2;
 const savedLang = localStorage.getItem("language") || "bn";
-let questionsData = savedVersion === 1 ? questionsDataV1 : (savedLang === "bn" ? questionsDataV2 : questionsDataV2En);
+let questionsData = savedVersion === 1 ? questionsDataV1 : savedVersion === 3 ? reactQuestionsData : (savedLang === "bn" ? questionsDataV2 : questionsDataV2En);
 
 // Handle version change from dropdown
 function handleVersionChange(selectElement) {
@@ -22,6 +22,11 @@ function handleVersionChange(selectElement) {
     localStorage.setItem("version", 2);
     localStorage.setItem("language", "en");
     showToast("Switched to V2 (English)", "success");
+  } else if (value === "react") {
+    questionsData = reactQuestionsData;
+    localStorage.setItem("version", 3);
+    localStorage.setItem("language", "bn");
+    showToast("Switched to React Questions", "success");
   }
   
   // Sync both dropdowns
@@ -790,6 +795,8 @@ function init() {
   let selectedValue = "v2-bn";
   if (v === 1) {
     selectedValue = "v1";
+  } else if (v === 3) {
+    selectedValue = "react";
   } else if (lang === "bn") {
     selectedValue = "v2-bn";
   } else {

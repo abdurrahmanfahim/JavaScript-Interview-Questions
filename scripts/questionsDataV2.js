@@ -1,4 +1,4 @@
-const questionsDataV2 = [
+﻿const questionsDataV2 = [
   {
     id: 1,
     title: "What is the difference between var, let, and const?",
@@ -27,7 +27,6 @@ const questionsDataV2 = [
       </ul>
       <p><strong>মনে রাখার টিপস:</strong> const = "box টা fix, কিন্তু box এর ভিতরের জিনিস নাড়াচাড়া করা যায়"</p>
     `,
-    difficulty: "Easy",
     tags: ["Variables", "JavaScript Basics"],
   },
   {
@@ -47,7 +46,6 @@ const questionsDataV2 = [
         <li>Function expression/arrow = শুধু নাম উঠে, body না ❌</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Hoisting", "JavaScript Basics"],
   },
   {
@@ -69,7 +67,6 @@ const questionsDataV2 = [
   // TDZ শেষ
 }</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["TDZ", "JavaScript Basics"],
   },
   {
@@ -97,7 +94,6 @@ counter(); // 2
 counter(); // 3</code></pre>
       <p><strong>মনে রাখার টিপস:</strong> Closure = function + তার আশেপাশের variables এর "memory"</p>
     `,
-    difficulty: "Medium",
     tags: ["Closures", "Functions"],
   },
   {
@@ -123,7 +119,6 @@ function multiplier(factor) {
 const double = multiplier(2);
 double(5); // 10</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Functions", "HOF"],
   },
   {
@@ -148,7 +143,6 @@ function second() {
 first();
 // Stack: [first] → [first, second] → [first] → []</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Call Stack", "Execution Context"],
   },
   {
@@ -166,7 +160,6 @@ first();
         <li>এই cycle বারবার repeat হয়</li>
       </ol>
     `,
-    difficulty: "Medium",
     tags: ["Event Loop", "Async"],
   },
   {
@@ -188,7 +181,6 @@ first();
       </ol>
       <p><strong>মনে রাখার টিপস:</strong> Microtask = VIP Queue (আগে যাবে), Macrotask = Normal Queue</p>
     `,
-    difficulty: "Medium",
     tags: ["Event Loop", "Async"],
   },
   {
@@ -212,7 +204,6 @@ const search = debounce((query) => {
 }, 500);</code></pre>
       <p><strong>মনে রাখার টিপস:</strong> Debounce = "চুপ হলে কাজ করবো" (typing শেষে search)</p>
     `,
-    difficulty: "Medium",
     tags: ["Performance", "Optimization"],
   },
   {
@@ -238,7 +229,6 @@ const search = debounce((query) => {
 }</code></pre>
       <p><strong>মনে রাখার টিপস:</strong> Throttle = "নিয়মিত বিরতিতে কাজ করবো" (প্রতি 1 সেকেন্ডে scroll position check)</p>
     `,
-    difficulty: "Medium",
     tags: ["Performance", "Optimization"],
   },
   {
@@ -271,7 +261,6 @@ curriedAdd(1)(2)(3); // 6
 const curriedAdd = a => b => c => a + b + c;</code></pre>
       <p><strong>মনে রাখার টিপস:</strong> Currying = একটা function কে step by step arguments নেওয়ার chain এ convert করা</p>
     `,
-    difficulty: "Medium",
     tags: ["Functions", "Functional Programming"],
   },
   {
@@ -302,7 +291,6 @@ function addToTotal(num) {
       <p><strong>Benefits:</strong> Predictable, testable, cacheable (memoization), parallelizable</p>
       <p><strong>মনে রাখার টিপস:</strong> Pure = "বাইরে কিছু ছোঁয় না, ভিতরে কিছু পাল্টায় না"</p>
     `,
-    difficulty: "Medium",
     tags: ["Functions", "Functional Programming"],
   },
   {
@@ -331,7 +319,6 @@ frozen.a = 10; // ❌ Silent fail
 frozen.nested.b = 20; // ✅ Works! (shallow freeze)</code></pre>
       <p><strong>মনে রাখার টিপস:</strong> Immutable = "পুরানোটা রাখো, নতুন copy বানাও"</p>
     `,
-    difficulty: "Medium",
     tags: ["Immutability", "Functional Programming"],
   },
   {
@@ -365,7 +352,6 @@ function greet() {
 greet.call({ name: "Jane" }); // "Jane"</code></pre>
       <p><strong>মনে রাখার সূত্র:</strong> "কে ডাকছে, সে-ই this" (arrow function ছাড়া)</p>
     `,
-    difficulty: "Medium",
     tags: ["this", "JavaScript Basics"],
   },
   {
@@ -400,7 +386,6 @@ greet.call({ name: "Jane" }); // "Jane"</code></pre>
         <li>Global namespace pollution avoid করা</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["IIFE", "Functions"],
   },
   {
@@ -433,7 +418,6 @@ john.greet(); // "Hello, John"
 john.__proto__ === Person.prototype // true
 Person.prototype.__proto__ === Object.prototype // true</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Prototype", "Inheritance"],
   },
   {
@@ -469,7 +453,6 @@ class Dog extends Animal {
 }</code></pre>
       <p><strong>মনে রাখার টিপস:</strong> Prototypal Inheritance = "নিজে না পেলে বাবার কাছ থেকে খুঁজে নাও"</p>
     `,
-    difficulty: "Medium",
     tags: ["Prototype", "Inheritance"],
   },
   {
@@ -501,7 +484,6 @@ function test() {
 
 var eval = 5; // ❌ SyntaxError</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Strict Mode", "JavaScript Basics"],
   },
   {
@@ -535,7 +517,6 @@ null == undefined // true
 null === undefined // false</code></pre>
       <p><strong>Best practice:</strong> Always use <code>===</code> to avoid unexpected bugs</p>
     `,
-    difficulty: "Medium",
     tags: ["Operators", "JavaScript Basics"],
   },
   {
@@ -571,7 +552,6 @@ Number("5")   // 5
 String(123)   // "123"
 Boolean(0)    // false</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Type Coercion", "JavaScript Basics"],
   },
   {
@@ -607,7 +587,6 @@ promise
   .catch(error => console.log(error))
   .finally(() => console.log("Done!"));</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -651,7 +630,6 @@ fetchData();</code></pre>
         <li>Error handling easy with try/catch</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Async/Await", "Promises"],
   },
   {
@@ -683,7 +661,6 @@ getData(function(a) {
         <li><strong>Modular Functions</strong> → named functions use করা</li>
       </ol>
     `,
-    difficulty: "Medium",
     tags: ["Callbacks", "Async"],
   },
   {
@@ -708,7 +685,6 @@ getData(function(a) {
         <li>Serial async operation control easy</li>
       </ol>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -741,7 +717,6 @@ Promise.all([p1, p2, p3])
       </ul>
       <p><strong>মনে রাখার টিপস:</strong> Promise.all() = "সবাই পাশ করলে পাশ, একজন ফেল করলে সবাই ফেল"</p>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -779,7 +754,6 @@ Promise.race([fetch('/api/data'), timeout])
         <li>Multiple sources এ race করা</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -810,7 +784,6 @@ Promise.any([p1, p2, p3])
         <li>যেকোনো একটা success হলেই চলবে</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -847,7 +820,6 @@ Promise.allSettled([p1, p2, p3])
         <li>Logging, monitoring, cleanup tasks</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -882,7 +854,6 @@ console.log("4");
 // Output: 1, 4, 3, 2
 // (sync → microtask → macrotask)</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Event Loop", "Async"],
   },
   {
@@ -915,7 +886,6 @@ console.log("4");
         <li>শুধু <strong>JS code execution</strong> single thread এ হয়</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["JavaScript Basics", "Event Loop"],
   },
   {
@@ -956,7 +926,6 @@ self.onmessage = (e) => {
         <li>Image/video processing</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Web Workers", "Performance"],
   },
   {
@@ -991,7 +960,6 @@ consume();</code></pre>
         <li>Real-time data streams</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Async", "Iterators"],
   },
   {
@@ -1031,7 +999,6 @@ fetch('/api/users', {
 });</code></pre>
       <p><strong>মনে রাখার টিপস:</strong> fetch() শুধু network fail এ কাঁদে, 404/500 এ চুপ থাকে — নিজে check করতে হবে!</p>
     `,
-    difficulty: "Medium",
     tags: ["Fetch", "HTTP", "Async"],
   },
   {
@@ -1069,7 +1036,6 @@ xhr.send();</code></pre>
         <li>Fetch = promise-based, cleaner</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["XHR", "HTTP", "Async"],
   },
   {
@@ -1107,7 +1073,6 @@ console.log("3"); // doesn't wait
         <li><strong>Async</strong> = parallel, non-blocking, future result</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Async", "JavaScript Basics"],
   },
   {
@@ -1149,7 +1114,6 @@ const calculate = (a, b) => {
         <li>Constructors</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Arrow Functions", "ES6"],
   },
   {
@@ -1188,7 +1152,6 @@ const { address: { street } } = { address: { street: "Main St" } };</code></pre>
 }
 greet({ name: "John", age: 30 });</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Destructuring", "ES6"],
   },
   {
@@ -1225,7 +1188,6 @@ Math.max(...numbers); // 3</code></pre>
         <li>Deep copy করতে হলে <code>structuredClone(obj)</code> বা <code>JSON.parse(JSON.stringify(obj))</code> use করতে হয়</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Spread Operator", "ES6"],
   },
   {
@@ -1257,7 +1219,6 @@ console.log(rest); // [3, 4, 5]</code></pre>
 console.log(others); // { b: 2, c: 3 }</code></pre>
       <p><strong>Note:</strong> Rest must be the last element</p>
     `,
-    difficulty: "Medium",
     tags: ["Rest Operator", "ES6"],
   },
   {
@@ -1297,7 +1258,6 @@ console.log(\`Is adult: \${age >= 18 ? 'Yes' : 'No'}\`);</code></pre>
 
 highlight\`Hello \${name}, you are \${age}\`;</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Template Literals", "ES6"],
   },
   {
@@ -1340,7 +1300,6 @@ import myFunction from './module.js';
 // Mixed
 import React, { useState, useEffect } from 'react';</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["ES Modules", "ES6"],
   },
   {
@@ -1376,7 +1335,6 @@ export const helper = () => { };
 // import
 import main, { helper } from './module.js';</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["ES Modules", "Export"],
   },
   {
@@ -1419,7 +1377,6 @@ import * as math from './math.js';
 console.log(math.PI);
 math.add(1, 2);</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["ES Modules", "Export"],
   },
   {
@@ -1458,7 +1415,6 @@ console.log(numbers); // [1, 2, 3] (unchanged)</code></pre>
         <li><code>map()</code> = iterate + transform, returns new array</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Array Methods", "map", "forEach"],
   },
   {
@@ -1496,7 +1452,6 @@ const sum = numbers.reduce((acc, n) => acc + n, 0);
   .map(n => n * 10)          // [20, 40]
   .reduce((a, b) => a + b);  // 60</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Array Methods", "map", "filter", "reduce"],
   },
   {
@@ -1543,7 +1498,6 @@ for (const [key, value] of map) {
   console.log(key, value);
 }</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Set", "Map", "Collections"],
   },
   {
@@ -1582,7 +1536,6 @@ user = null; // key ও value garbage collected হবে</code></pre>
       </ul>
       <p><strong>মনে রাখার টিপস:</strong> Weak = "ধরে রাখে না, ছেড়ে দেয়" → memory leak prevent করে</p>
     `,
-    difficulty: "Medium",
     tags: ["WeakSet", "WeakMap", "Collections"],
   },
   {
@@ -1622,7 +1575,6 @@ console.log(Object.keys(user)); // ["name"] (symbol hidden)</code></pre>
 const sameSym = Symbol.for("shared");
 console.log(globalSym === sameSym); // true</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Symbols", "ES6"],
   },
   {
@@ -1663,7 +1615,6 @@ empty?.[0]; // undefined</code></pre>
       <pre><code>const city = user.address?.city ?? "Unknown";
 // If city is null/undefined, use "Unknown"</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Optional Chaining", "ES2020"],
   },
   {
@@ -1696,7 +1647,6 @@ const name = userSettings.name ?? "Guest"; // "" might be valid!</code></pre>
         <li><code>??</code> = "null/undefined হলে বদলাও"</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Nullish Coalescing", "ES2020"],
   },
   {
@@ -1741,7 +1691,6 @@ parent.appendChild(div);</code></pre>
         <li><strong>Shadow DOM</strong> → Web Components এ encapsulation</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["DOM", "Web APIs"],
   },
   {
@@ -1783,7 +1732,6 @@ const arr2 = Array.from(divs);</code></pre>
         <li><code>NodeList</code> = usually static, all nodes, has forEach</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["DOM", "HTMLCollection", "NodeList"],
   },
   {
@@ -1828,7 +1776,6 @@ document.getElementById('grandparent').addEventListener('click', () => {
 // stopImmediatePropagation() → same element এর বাকি listeners ও stop</code></pre>
       <p><strong>মনে রাখার টিপস:</strong> "নামে (capture) → থামে (target) → ওঠে (bubble)"</p>
     `,
-    difficulty: "Medium",
     tags: ["Events", "Event Bubbling"],
   },
   {
@@ -1871,7 +1818,6 @@ document.getElementById('child').addEventListener('click', () => {
         <li>Parent-level validation বা logging</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Events", "Event Capturing"],
   },
   {
@@ -1918,7 +1864,6 @@ document.getElementById('list').appendChild(newLi);
         <li><code>e.currentTarget</code> = listener যে element এ আছে</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Events", "Event Delegation"],
   },
   {
@@ -1963,7 +1908,6 @@ const stored = JSON.parse(localStorage.getItem('user'));</code></pre>
         <li>HttpOnly cookies বেশি secure for auth tokens</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["localStorage", "Web Storage"],
   },
   {
@@ -1999,7 +1943,6 @@ localStorage.setItem('permanent', 'data');
         <tr><td>Size</td><td>~5-10MB</td><td>~5MB</td></tr>
       </table>
     `,
-    difficulty: "Medium",
     tags: ["sessionStorage", "localStorage", "Web Storage"],
   },
   {
@@ -2055,7 +1998,6 @@ localStorage.setItem('permanent', 'data');
       </ul>
       <p><strong>Note:</strong> প্রতিটি HTTP request এ cookies automatically server এ যায় → bandwidth concern</p>
     `,
-    difficulty: "Medium",
     tags: ["Cookie", "localStorage", "sessionStorage"],
   },
   {
@@ -2101,7 +2043,6 @@ div.textContent;  // "Hello World"</code></pre>
         <li><code>textContent</code> → plain text, user input (safer)</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["DOM", "innerHTML", "textContent"],
   },
   {
@@ -2145,7 +2086,6 @@ element.style.backgroundColor = 'blue';</code></pre>
         <li>Repaint = রং করা (ছোট কাজ)</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Reflow", "Repaint", "Performance"],
   },
   {
@@ -2188,7 +2128,6 @@ CSS → CSSOM</code></pre>
         <li><code>async</code>/<code>defer</code> script attributes এ non-blocking হয়</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Browser Rendering", "Performance"],
   },
   {
@@ -2223,7 +2162,6 @@ Access-Control-Allow-Credentials: true</code></pre>
         <li>CORS error হলে server headers check করতে হয়</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["CORS", "Security"],
   },
   {
@@ -2264,7 +2202,6 @@ Access-Control-Max-Age: 86400  // cache preflight 24 hours</code></pre>
         <li><code>Access-Control-Max-Age</code> দিয়ে cache করা যায়</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["CORS", "Preflight", "Security"],
   },
   {
@@ -2312,7 +2249,6 @@ self.addEventListener('fetch', (event) => {
   );
 });</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Service Worker", "PWA"],
   },
   {
@@ -2360,7 +2296,6 @@ self.addEventListener('fetch', (event) => {
         <li>SEO friendly</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["PWA", "Service Worker"],
   },
   {
@@ -2413,7 +2348,6 @@ cancelAnimationFrame(id);</code></pre>
 
 requestAnimationFrame(animate);</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Animation", "Performance"],
   },
   {
@@ -2465,7 +2399,6 @@ function App() {
         <li>Route-based code splitting</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Lazy Loading", "Performance"],
   },
   {
@@ -2510,7 +2443,6 @@ If-Modified-Since: Wed, 01 Jan 2024 00:00:00 GMT</code></pre>
 &lt;script src="app.abc123.js"&gt;&lt;/script&gt;
 &lt;link href="styles.xyz789.css"&gt;</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Caching", "Performance"],
   },
   {
@@ -2563,7 +2495,6 @@ document.body.removeChild(item);
         <li>Use WeakMap/WeakSet for object references</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Memory Leak", "Performance"],
   },
 ];
@@ -2597,7 +2528,6 @@ const questionsDataV2En = [
       </ul>
       <p><strong>Remember:</strong> const = "box is fixed, but items inside can change"</p>
     `,
-    difficulty: "Easy",
     tags: ["Variables", "JavaScript Basics"],
   },
   {
@@ -2617,7 +2547,6 @@ const questionsDataV2En = [
         <li>Function expression/arrow = only name hoisted, not body ❌</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Hoisting", "JavaScript Basics"],
   },
   {
@@ -2639,7 +2568,6 @@ const questionsDataV2En = [
   // TDZ ends
 }</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["TDZ", "JavaScript Basics"],
   },
   {
@@ -2667,7 +2595,6 @@ counter(); // 2
 counter(); // 3</code></pre>
       <p><strong>Remember:</strong> Closure = function + its surrounding variables' memory</p>
     `,
-    difficulty: "Medium",
     tags: ["Closures", "Functions"],
   },
   {
@@ -2692,7 +2619,6 @@ function multiplier(factor) {
 const double = multiplier(2);
 double(5); // 10</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Functions", "HOF"],
   },
   {
@@ -2717,7 +2643,6 @@ function second() {
 first();
 // Stack: [first] → [first, second] → [first] → []</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Call Stack", "Execution Context"],
   },
   {
@@ -2734,7 +2659,6 @@ first();
         <li>Repeat this cycle</li>
       </ol>
     `,
-    difficulty: "Medium",
     tags: ["Event Loop", "Async"],
   },
   {
@@ -2755,7 +2679,6 @@ first();
       </ol>
       <p><strong>Remember:</strong> Microtask = VIP Queue (runs first), Macrotask = Normal Queue</p>
     `,
-    difficulty: "Medium",
     tags: ["Event Loop", "Async"],
   },
   {
@@ -2779,7 +2702,6 @@ const search = debounce((query) => {
 }, 500);</code></pre>
       <p><strong>Remember:</strong> Debounce = "Wait until quiet, then act"</p>
     `,
-    difficulty: "Medium",
     tags: ["Performance", "Optimization"],
   },
   {
@@ -2805,7 +2727,6 @@ const search = debounce((query) => {
 }</code></pre>
       <p><strong>Remember:</strong> Throttle = "Act regularly at intervals"</p>
     `,
-    difficulty: "Medium",
     tags: ["Performance", "Optimization"],
   },
   {
@@ -2837,7 +2758,6 @@ curriedAdd(1)(2)(3); // 6
 // Arrow function version
 const curriedAdd = a => b => c => a + b + c;</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Functions", "Functional Programming"],
   },
   {
@@ -2865,7 +2785,6 @@ function addToTotal(num) {
       <p><strong>Benefits:</strong> Predictable, testable, cacheable</p>
       <p><strong>Remember:</strong> Pure = "Doesn't touch outside, doesn't change inside"</p>
     `,
-    difficulty: "Medium",
     tags: ["Functions", "Functional Programming"],
   },
   {
@@ -2893,7 +2812,6 @@ frozen.a = 10; // ❌ fails silently
 frozen.nested.b = 20; // ✅ works (shallow freeze)</code></pre>
       <p><strong>Remember:</strong> Immutable = "Keep original, create new copy"</p>
     `,
-    difficulty: "Medium",
     tags: ["Immutability", "Functional Programming"],
   },
   {
@@ -2924,7 +2842,6 @@ function greet() { console.log(this.name); }
 greet.call({ name: "Jane" }); // "Jane"</code></pre>
       <p><strong>Remember:</strong> "Who calls it = this" (except arrow functions)</p>
     `,
-    difficulty: "Medium",
     tags: ["this", "JavaScript Basics"],
   },
   {
@@ -2958,7 +2875,6 @@ greet.call({ name: "Jane" }); // "Jane"</code></pre>
         <li>Creating private variables</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["IIFE", "Functions"],
   },
   {
@@ -2989,7 +2905,6 @@ john.greet(); // "Hello, John"
 
 john.__proto__ === Person.prototype // true</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Prototype", "Inheritance"],
   },
   {
@@ -3022,7 +2937,6 @@ class Dog extends Animal {
 }</code></pre>
       <p><strong>Remember:</strong> "If I don't have it, ask my parent"</p>
     `,
-    difficulty: "Medium",
     tags: ["Prototype", "Inheritance"],
   },
   {
@@ -3051,7 +2965,6 @@ function test() {
 
 var eval = 5; // ❌ SyntaxError</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Strict Mode", "JavaScript Basics"],
   },
   {
@@ -3081,7 +2994,6 @@ null == undefined // true
 null === undefined // false</code></pre>
       <p><strong>Best practice:</strong> Always use <code>===</code> to avoid unexpected bugs</p>
     `,
-    difficulty: "Medium",
     tags: ["Operators", "JavaScript Basics"],
   },
   {
@@ -3106,7 +3018,6 @@ Number("5")   // 5
 String(123)   // "123"
 Boolean(0)    // false</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Type Coercion", "JavaScript Basics"],
   },
   {
@@ -3135,7 +3046,6 @@ promise
   .catch(error => console.log(error))
   .finally(() => console.log("Done!"));</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -3167,7 +3077,6 @@ promise
         <li>Easy error handling with try/catch</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Async/Await", "Promises"],
   },
   {
@@ -3195,7 +3104,6 @@ getData(function(a) {
         <li><strong>Named functions</strong> → modular approach</li>
       </ol>
     `,
-    difficulty: "Medium",
     tags: ["Callbacks", "Async"],
   },
   {
@@ -3218,7 +3126,6 @@ getData(function(a) {
         <li>Avoids callback hell</li>
       </ol>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -3246,7 +3153,6 @@ Promise.all([p1, p2, p3])
   });</code></pre>
       <p><strong>Remember:</strong> "All pass = pass, one fail = all fail"</p>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -3284,7 +3190,6 @@ Promise.race([fetch('/api/data'), timeout])
         <li>Racing multiple sources</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -3315,7 +3220,6 @@ Promise.any([p1, p2, p3])
         <li>Any one success is enough</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -3352,7 +3256,6 @@ Promise.allSettled([p1, p2, p3])
         <li>Logging, monitoring, cleanup</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Promises", "Async"],
   },
   {
@@ -3383,7 +3286,6 @@ console.log("4");
 
 // Output: 1, 4, 3, 2</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Event Loop", "Async"],
   },
   {
@@ -3404,7 +3306,6 @@ console.log("4");
         <li>Only <strong>JS code execution</strong> is single-threaded</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["JavaScript Basics", "Event Loop"],
   },
   {
@@ -3443,7 +3344,6 @@ self.onmessage = (e) => {
         <li>Image/video processing</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Web Workers", "Performance"],
   },
   {
@@ -3477,7 +3377,6 @@ consume();</code></pre>
         <li>Real-time data streams</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Async", "Iterators"],
   },
   {
@@ -3516,7 +3415,6 @@ fetch('/api/users', {
 });</code></pre>
       <p><strong>Remember:</strong> fetch only cries on network fail, stays silent on 404/500!</p>
     `,
-    difficulty: "Medium",
     tags: ["Fetch", "HTTP", "Async"],
   },
   {
@@ -3553,7 +3451,6 @@ xhr.send();</code></pre>
         <li>Fetch = Promise-based, cleaner</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["XHR", "HTTP", "Async"],
   },
   {
@@ -3590,7 +3487,6 @@ console.log("3");
         <li><strong>Async</strong> = parallel, non-blocking, future result</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Async", "JavaScript Basics"],
   },
   {
@@ -3630,7 +3526,6 @@ const calculate = (a, b) => {
         <li>Constructors</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Arrow Functions", "ES6"],
   },
   {
@@ -3666,7 +3561,6 @@ const { address: { street } } = { address: { street: "Main St" } };</code></pre>
 }
 greet({ name: "John", age: 30 });</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Destructuring", "ES6"],
   },
   {
@@ -3701,7 +3595,6 @@ Math.max(...numbers); // 3</code></pre>
         <li>For deep copy use <code>structuredClone()</code> or <code>JSON.parse(JSON.stringify())</code></li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Spread Operator", "ES6"],
   },
   {
@@ -3732,7 +3625,6 @@ console.log(rest); // [2, 3, 4]</code></pre>
 console.log(others); // { b: 2, c: 3 }</code></pre>
       <p><strong>Note:</strong> Rest must be the last element</p>
     `,
-    difficulty: "Medium",
     tags: ["Rest Operator", "ES6"],
   },
   {
@@ -3764,7 +3656,6 @@ const msg2 = \`Hello, \${name}! Age: \${age}\`;</code></pre>
       <pre><code>console.log(\`Sum: \${10 + 20}\`); // Sum: 30
 console.log(\`Adult: \${age >= 18 ? 'Yes' : 'No'}\`);</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Template Literals", "ES6"],
   },
   {
@@ -3802,7 +3693,6 @@ import myFunction from './module.js';
 // Mixed
 import React, { useState } from 'react';</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["ES Modules", "ES6"],
   },
   {
@@ -3834,7 +3724,6 @@ export const helper = () => { };
 // import
 import main, { helper } from './module.js';</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["ES Modules", "Export"],
   },
   {
@@ -3864,7 +3753,6 @@ import { add as sum } from './math.js';
 import * as math from './math.js';
 math.add(1, 2);</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["ES Modules", "Export"],
   },
   {
@@ -3901,7 +3789,6 @@ const doubled = numbers.map(n => n * 2);
         <li><code>map</code> = iterate + transform, returns new array</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Array Methods", "map", "forEach"],
   },
   {
@@ -3935,7 +3822,6 @@ const doubled = numbers.map(n => n * 2);
   .map(n => n * 10)          // [20, 40]
   .reduce((a, b) => a + b);  // 60</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Array Methods", "map", "filter", "reduce"],
   },
   {
@@ -3973,7 +3859,6 @@ for (const [key, value] of map) {
   console.log(key, value);
 }</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Set", "Map", "Collections"],
   },
   {
@@ -4008,7 +3893,6 @@ user = null; // key and value can be GC'd</code></pre>
       </ul>
       <p><strong>Remember:</strong> Weak = "doesn't hold on, lets go" → prevents memory leaks</p>
     `,
-    difficulty: "Medium",
     tags: ["WeakSet", "WeakMap", "Collections"],
   },
   {
@@ -4040,7 +3924,6 @@ console.log(Object.keys(user)); // ["name"] (symbol hidden)</code></pre>
 const sameSym = Symbol.for("shared");
 console.log(globalSym === sameSym); // true</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Symbols", "ES6"],
   },
   {
@@ -4066,7 +3949,6 @@ null?.[0]; // undefined</code></pre>
       <h3>With Nullish Coalescing</h3>
       <pre><code>const city = user.address?.city ?? "Unknown";</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Optional Chaining", "ES2020"],
   },
   {
@@ -4099,7 +3981,6 @@ const name = settings.name ?? "Guest";</code></pre>
         <li><code>??</code> = "null/undefined? replace"</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Nullish Coalescing", "ES2020"],
   },
   {
@@ -4141,7 +4022,6 @@ parent.appendChild(div);</code></pre>
         <li><strong>Shadow DOM</strong> — Web Components encapsulation</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["DOM", "Web APIs"],
   },
   {
@@ -4177,7 +4057,6 @@ divs2.forEach(div => console.log(div));
 const arr = [...divs];
 const arr2 = Array.from(divs);</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["DOM", "HTMLCollection", "NodeList"],
   },
   {
@@ -4209,7 +4088,6 @@ grandparent.addEventListener('click', () => console.log('Grandparent'));
 e.stopImmediatePropagation(); // also stops same-element listeners</code></pre>
       <p><strong>Remember:</strong> "Down (capture) → Stop (target) → Up (bubble)"</p>
     `,
-    difficulty: "Medium",
     tags: ["Events", "Event Bubbling"],
   },
   {
@@ -4248,7 +4126,6 @@ child.addEventListener('click', () => {
         <li>Parent-level validation/logging</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Events", "Event Capturing"],
   },
   {
@@ -4290,7 +4167,6 @@ list.appendChild(newLi); // click will work!</code></pre>
         <li><code>e.currentTarget</code> = element with listener</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Events", "Event Delegation"],
   },
   {
@@ -4325,7 +4201,6 @@ const stored = JSON.parse(localStorage.getItem('user'));</code></pre>
         <li>Use HttpOnly cookies for auth tokens</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["localStorage", "Web Storage"],
   },
   {
@@ -4360,7 +4235,6 @@ localStorage.setItem('permanent', 'data');
         <tr><td>Size</td><td>~5-10MB</td><td>~5MB</td></tr>
       </table>
     `,
-    difficulty: "Medium",
     tags: ["sessionStorage", "localStorage", "Web Storage"],
   },
   {
@@ -4388,7 +4262,6 @@ localStorage.setItem('permanent', 'data');
       </ul>
       <p><strong>Note:</strong> Cookies sent with every HTTP request — bandwidth concern</p>
     `,
-    difficulty: "Medium",
     tags: ["Cookie", "localStorage", "sessionStorage"],
   },
   {
@@ -4431,7 +4304,6 @@ div.textContent;  // "Hello World"</code></pre>
         <li><code>textContent</code> — plain text, user input (safer)</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["DOM", "innerHTML", "textContent"],
   },
   {
@@ -4470,7 +4342,6 @@ element.style.backgroundColor = 'blue';</code></pre>
       </ul>
       <p><strong>Remember:</strong> Reflow = rearranging furniture (big), Repaint = painting walls (small)</p>
     `,
-    difficulty: "Medium",
     tags: ["Reflow", "Repaint", "Performance"],
   },
   {
@@ -4511,7 +4382,6 @@ CSS → CSSOM ↗</code></pre>
         <li><code>async</code>/<code>defer</code> make scripts non-blocking</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Browser Rendering", "Performance"],
   },
   {
@@ -4546,7 +4416,6 @@ Access-Control-Allow-Credentials: true</code></pre>
         <li>CORS error? Check server headers</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["CORS", "Security"],
   },
   {
@@ -4587,7 +4456,6 @@ Access-Control-Max-Age: 86400  // cache 24 hours</code></pre>
         <li>Can be cached with Max-Age</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["CORS", "Preflight", "Security"],
   },
   {
@@ -4635,7 +4503,6 @@ self.addEventListener('fetch', (event) => {
   );
 });</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Service Worker", "PWA"],
   },
   {
@@ -4679,7 +4546,6 @@ self.addEventListener('fetch', (event) => {
         <li>SEO friendly</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["PWA", "Service Worker"],
   },
   {
@@ -4728,7 +4594,6 @@ cancelAnimationFrame(id);</code></pre>
   }
 }</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Animation", "Performance"],
   },
   {
@@ -4779,7 +4644,6 @@ function App() {
         <li>Route-based code splitting</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Lazy Loading", "Performance"],
   },
   {
@@ -4823,7 +4687,6 @@ If-Modified-Since: Wed, 01 Jan 2024 00:00:00 GMT</code></pre>
       <pre><code>&lt;script src="app.abc123.js"&gt;&lt;/script&gt;
 &lt;link href="styles.xyz789.css"&gt;</code></pre>
     `,
-    difficulty: "Medium",
     tags: ["Caching", "Performance"],
   },
   {
@@ -4876,7 +4739,6 @@ document.body.removeChild(item);
         <li>Use WeakMap/WeakSet for object references</li>
       </ul>
     `,
-    difficulty: "Medium",
     tags: ["Memory Leak", "Performance"],
   },
 ];
