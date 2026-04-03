@@ -27,18 +27,24 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
-// Cache-First: cache থেকে দাও, না থাকলে network থেকে আনো এবং cache এ রাখো
+// Stale-While-Revalidate:
+// 1. cache থেকে সাথে সাথে দাও (offline এও কাজ করে)
+// 2. background এ network থেকে নতুন version আনো
+// 3. cache update করো — পরের reload এ নতুন version পাবে
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request).then((response) => {
-        if (!response || response.status !== 200 || response.type === "opaque") {
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(event.request).then((cached) => {
+        const networkFetch = fetch(event.request).then((response) => {
+          if (response && response.status === 200 && response.type !== "opaque") {
+            cache.put(event.request, response.clone());
+          }
           return response;
-        }
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
-        return response;
+        }).catch(() => null);
+
+        // cache আছে → সাথে সাথে দাও, background এ update হবে
+        // cache নেই → network এর জন্য wait করো
+        return cached || networkFetch;
       });
     })
   );
