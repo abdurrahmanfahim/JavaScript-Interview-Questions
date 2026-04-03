@@ -1,14 +1,14 @@
-const CACHE_NAME = "js-qsns-v3";
+const CACHE_NAME = "js-qsns-v4";
 const ASSETS = [
-  "/",
-  "/index.html",
-  "css/styles.css",
-  "css/all.css",
-  "scripts/topicsConfig.js",
-  "scripts/logic.js",
-  "scripts/questionsData.js",
-  "scripts/questionsDataV2.js",
-  "scripts/reactQuestionsData.js"
+  "./",
+  "./index.html",
+  "./css/styles.css",
+  "./css/all.css",
+  "./scripts/topicsConfig.js",
+  "./scripts/logic.js",
+  "./scripts/questionsData.js",
+  "./scripts/questionsDataV2.js",
+  "./scripts/reactQuestionsData.js"
 ];
 
 self.addEventListener("install", (event) => {
@@ -27,8 +27,19 @@ self.addEventListener("activate", (event) => {
   self.clients.claim();
 });
 
+// Cache-First: cache থেকে দাও, না থাকলে network থেকে আনো এবং cache এ রাখো
 self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then((res) => res || fetch(event.request))
+    caches.match(event.request).then((cached) => {
+      if (cached) return cached;
+      return fetch(event.request).then((response) => {
+        if (!response || response.status !== 200 || response.type === "opaque") {
+          return response;
+        }
+        const clone = response.clone();
+        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
+        return response;
+      });
+    })
   );
 });
