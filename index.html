@@ -23,10 +23,6 @@
       <h2 class="appbar-title">JS Interview</h2>
       <div class="select-wrapper" style="max-width: 85px; margin: 0 6px;">
         <select id="mobileVersionSelect" onchange="handleVersionChange(this)">
-          <option value="v1">V1</option>
-          <option value="v2-bn" selected>V2</option>
-          <option value="v2-en">V2 (En)</option>
-          <option value="react">React</option>
         </select>
       </div>
       <div class="appbar-actions">
@@ -125,10 +121,6 @@
       <p class="subtitle">Master JavaScript concepts with 70+ curated questions</p>
       <div class="select-wrapper" style="max-width: 300px; margin: 20px auto 0;">
         <select id="versionSelect" onchange="handleVersionChange(this)">
-          <option value="v1">V1</option>
-          <option value="v2-bn" selected>V2 (বাংলা)</option>
-          <option value="v2-en">V2 (English)</option>
-          <option value="react">React</option>
         </select>
       </div>
     </div>
@@ -228,10 +220,22 @@
   <!-- Toast Container -->
   <div class="toast-container" id="toastContainer"></div>
 
+  <script src="scripts/topicsConfig.js"></script>
   <script src="scripts/questionsData.js"></script>
   <script src="scripts/questionsDataV2.js"></script>
   <script src="scripts/reactQuestionsData.js"></script>
-  <script src="scripts/logic.js">
+  <script>
+    // data files load হওয়ার পর dataMap এ register করা
+    registerData("questionsDataV1", questionsDataV1);
+    registerData("questionsDataV2", questionsDataV2);
+    registerData("questionsDataV2En", questionsDataV2En);
+    registerData("reactQuestionsData", reactQuestionsData);
+  </script>
+  <script src="scripts/logic.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('scripts/service-worker.js');
+    }
   </script>
 
 </body>

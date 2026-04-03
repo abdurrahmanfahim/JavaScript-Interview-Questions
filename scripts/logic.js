@@ -1,40 +1,33 @@
-// Active questions data
-const savedVersion = parseInt(localStorage.getItem("version")) || 2;
-const savedLang = localStorage.getItem("language") || "bn";
-let questionsData = savedVersion === 1 ? questionsDataV1 : savedVersion === 3 ? reactQuestionsData : (savedLang === "bn" ? questionsDataV2 : questionsDataV2En);
+// Active questions data — config driven
+const savedTopicId = localStorage.getItem("topicId") || topics.find(t => t.default)?.id || topics[0].id;
+
+const getDataByTopicId = (id) => {
+  const topic = topics.find(t => t.id === id);
+  return topic ? dataMap[topic.dataVar] : null;
+};
+let questionsData = null;
 
 // Handle version change from dropdown
 function handleVersionChange(selectElement) {
   const value = selectElement.value;
-  
-  if (value === "v1") {
-    questionsData = questionsDataV1;
-    localStorage.setItem("version", 1);
-    localStorage.setItem("language", "bn");
-    showToast("Switched to Version 1", "success");
-  } else if (value === "v2-bn") {
-    questionsData = questionsDataV2;
-    localStorage.setItem("version", 2);
-    localStorage.setItem("language", "bn");
-    showToast("Switched to V2 (Bangla)", "success");
-  } else if (value === "v2-en") {
-    questionsData = questionsDataV2En;
-    localStorage.setItem("version", 2);
-    localStorage.setItem("language", "en");
-    showToast("Switched to V2 (English)", "success");
-  } else if (value === "react") {
-    questionsData = reactQuestionsData;
-    localStorage.setItem("version", 3);
-    localStorage.setItem("language", "bn");
-    showToast("Switched to React Questions", "success");
-  }
-  
+  const topic = topics.find(t => t.id === value);
+  if (!topic) return;
+
+  questionsData = dataMap[topic.dataVar];
+  localStorage.setItem("topicId", value);
+  showToast(`Switched to ${topic.label}`, "success");
+
+  // Reload topic-specific state
+  state.bookmarks = JSON.parse(localStorage.getItem(`bookmarks_${value}`) || "[]");
+  state.completed = JSON.parse(localStorage.getItem(`completed_${value}`) || "[]");
+  state.lastRead = JSON.parse(localStorage.getItem(`lastRead_${value}`) || "null");
+
   // Sync both dropdowns
   const versionSelect = document.getElementById("versionSelect");
   const mobileSelect = document.getElementById("mobileVersionSelect");
   if (versionSelect) versionSelect.value = value;
   if (mobileSelect) mobileSelect.value = value;
-  
+
   state.currentPage = 1;
   state.searchQuery = "";
   state.filter = "all";
@@ -50,9 +43,9 @@ let state = {
   questionsPerPage: 10,
   searchQuery: "",
   filter: "all",
-  bookmarks: JSON.parse(localStorage.getItem("bookmarks") || "[]"),
-  completed: JSON.parse(localStorage.getItem("completed") || "[]"),
-  lastRead: JSON.parse(localStorage.getItem("lastRead") || "null"),
+  bookmarks: JSON.parse(localStorage.getItem(`bookmarks_${savedTopicId}`) || "[]"),
+  completed: JSON.parse(localStorage.getItem(`completed_${savedTopicId}`) || "[]"),
+  lastRead: JSON.parse(localStorage.getItem(`lastRead_${savedTopicId}`) || "null"),
   expandedQuestions: new Set(),
   quizMode: false,
 };
@@ -68,7 +61,7 @@ function getFilteredQuestions() {
       (q) =>
         q.title.toLowerCase().includes(query) ||
         q.content.toLowerCase().includes(query) ||
-        q.tags.some((tag) => tag.toLowerCase().includes(query)),
+        (q.tags || []).some((tag) => tag.toLowerCase().includes(query)),
     );
   }
 
@@ -260,7 +253,7 @@ function toggleBookmark(id) {
     state.bookmarks.splice(index, 1);
     showToast("Bookmark removed", "warning");
   }
-  localStorage.setItem("bookmarks", JSON.stringify(state.bookmarks));
+  localStorage.setItem(`bookmarks_${savedTopicId}`, JSON.stringify(state.bookmarks));
   renderQuestions();
 }
 
@@ -274,19 +267,19 @@ function toggleCompleted(id) {
     state.completed.splice(index, 1);
     showToast("Marked as incomplete", "warning");
   }
-  localStorage.setItem("completed", JSON.stringify(state.completed));
+  localStorage.setItem(`completed_${savedTopicId}`, JSON.stringify(state.completed));
   renderQuestions();
 }
 
 // Save last read position
 function saveLastRead(questionId, page) {
   state.lastRead = { questionId, page, timestamp: Date.now() };
-  localStorage.setItem("lastRead", JSON.stringify(state.lastRead));
+  localStorage.setItem(`lastRead_${savedTopicId}`, JSON.stringify(state.lastRead));
 }
 
 // Check and show resume banner
 function checkResume() {
-  const lastRead = JSON.parse(localStorage.getItem("lastRead"));
+  const lastRead = JSON.parse(localStorage.getItem(`lastRead_${savedTopicId}`));
   if (lastRead && lastRead.questionId) {
     const banner = document.getElementById("resumeBanner");
     const question = questionsData.find((q) => q.id === lastRead.questionId);
@@ -300,7 +293,7 @@ function checkResume() {
 
 // Resume reading
 function resumeReading() {
-  const lastRead = JSON.parse(localStorage.getItem("lastRead"));
+  const lastRead = JSON.parse(localStorage.getItem(`lastRead_${savedTopicId}`));
   if (lastRead) {
     state.currentPage = lastRead.page || 1;
     renderQuestions();
@@ -419,9 +412,9 @@ function clearAllProgress() {
     state.bookmarks = [];
     state.completed = [];
     state.lastRead = null;
-    localStorage.removeItem("bookmarks");
-    localStorage.removeItem("completed");
-    localStorage.removeItem("lastRead");
+    localStorage.removeItem(`bookmarks_${savedTopicId}`);
+    localStorage.removeItem(`completed_${savedTopicId}`);
+    localStorage.removeItem(`lastRead_${savedTopicId}`);
     renderQuestions();
     showToast("Progress reset successfully", "warning");
   }
@@ -783,28 +776,23 @@ function init() {
       mobileIcon.innerHTML = '<i class="fa-light fa-sun-bright"></i>';
   }
 
-  // Render questions
-  renderQuestions();
-
-  // Sync version dropdown
-  const v = parseInt(localStorage.getItem("version")) || 2;
-  const lang = localStorage.getItem("language") || "bn";
+  // Generate dropdown options from config & sync selected
   const versionSelect = document.getElementById("versionSelect");
   const mobileVersionSelect = document.getElementById("mobileVersionSelect");
-  
-  let selectedValue = "v2-bn";
-  if (v === 1) {
-    selectedValue = "v1";
-  } else if (v === 3) {
-    selectedValue = "react";
-  } else if (lang === "bn") {
-    selectedValue = "v2-bn";
-  } else {
-    selectedValue = "v2-en";
-  }
-  
-  if (versionSelect) versionSelect.value = selectedValue;
-  if (mobileVersionSelect) mobileVersionSelect.value = selectedValue;
+
+  [versionSelect, mobileVersionSelect].forEach((sel, i) => {
+    if (!sel) return;
+    sel.innerHTML = topics.map(t =>
+      `<option value="${t.id}">${i === 1 ? t.mobileLabel : t.label}</option>`
+    ).join("");
+    sel.value = savedTopicId;
+  });
+
+  // Set active questionsData
+  questionsData = getDataByTopicId(savedTopicId) || dataMap[topics[0].dataVar];
+
+  // Render questions
+  renderQuestions();
 
   // Check for resume
   checkResume();
