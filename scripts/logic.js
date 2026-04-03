@@ -493,7 +493,28 @@ function exportProgress() {
 }
 
 // Download APK
-async function downloadApk() {
+function downloadApk() {
+  const overlay = document.getElementById("modalOverlay");
+  const title = document.getElementById("modalTitle");
+  const body = document.getElementById("modalBody");
+
+  title.textContent = "Download App";
+  body.innerHTML = `
+    <p style="margin-bottom: 16px;">This app is <strong>open source</strong>. You can review the full source code before installing.</p>
+    <p style="margin-bottom: 24px; color: var(--text-muted); font-size: 0.9rem;">Worried about security? Check the code yourself on GitHub — no hidden tracking, no malware.</p>
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+      <a href="https://github.com/abdurrahmanfahim/JavaScript-Interview-Questions" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" onclick="closeModal()">
+        <i class="fab fa-github"></i> View Source
+      </a>
+      <button class="btn btn-primary" onclick="closeModal(); startApkDownload()">
+        <i class="fa-brands fa-android"></i> Download APK
+      </button>
+    </div>
+  `;
+  overlay.classList.add("active");
+}
+
+async function startApkDownload() {
   try {
     showToast("Preparing download...", "info");
     
