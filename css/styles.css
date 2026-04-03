@@ -1590,6 +1590,11 @@ body::before {
     max-height: 85vh;
   }
 
+  .modal {
+    padding: 16px;
+    width: 95%;
+  }
+
   .modal-header {
     padding: 20px;
   }
